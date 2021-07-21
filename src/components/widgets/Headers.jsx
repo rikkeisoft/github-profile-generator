@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Logo from '../../../public/img/logo.png'
+import Logo from '/public/img/logo.png'
 
-import styles from '../../../styles/components/header.module.scss'
+import styles from '/styles/components/widgets/header.module.scss'
 
 export default function Header() {
   return (
