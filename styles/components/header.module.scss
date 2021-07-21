@@ -1,0 +1,23 @@
+.header {
+	@apply flex flex-col justify-center items-center py-1 border-b border-gray-300;
+
+	&__img {
+		@apply cursor-pointer;
+	}
+
+	&__title {
+		@apply leading-5 text-sm font-medium text-blue-900 cursor-pointer sm:text-2xl;
+	}
+
+	&__bottom {
+		@apply flex my-1;
+	}
+
+	&__btn {
+		@apply sm:text-sm;
+
+		&__number {
+			@apply ml-1 text-purple-600;
+		}
+	}
+}
