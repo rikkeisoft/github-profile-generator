@@ -1,27 +1,25 @@
 import Image from 'next/image'
 import Logo from '/public/img/logo.png'
 
-import styles from '/styles/components/widgets/header.module.scss'
-
 export default function Header() {
   return (
-    <div className={styles.header}>
+    <div className="flex flex-col justify-center items-center py-1 border-b border-gray-300">
       <Image 
         src={Logo} 
         width={50} 
         height={50} 
         alt="Logo"
-        className={styles.header__img}
+        className="cursor-pointer"
       />
-      <span className={styles.header__title}>GitHub Profile README Generator</span>
-      <div className={styles.header__bottom}>
-        <button className={`${styles.header__btn} btn`}>
+      <span className="leading-5 text-sm font-medium text-blue-900 cursor-pointer sm:text-2xl">GitHub Profile README Generator</span>
+      <div className="flex my-1">
+        <button className="sm:text-sm btn">
           Star this repo 
-          <span className={styles.header__btn__number}>6169</span>
+          <span className="ml-1 text-purple-600">6169</span>
         </button>
-        <button className={`${styles.header__btn} btn`}>
+        <button className="sm:text-sm btn">
           Fork on Github 
-          <span className={styles.header__btn__number}>1063</span>
+          <span className="ml-1 text-purple-600">1063</span>
         </button>
       </div>
     </div>

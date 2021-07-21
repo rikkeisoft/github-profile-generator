@@ -3,8 +3,6 @@ import Subtitle from "../screens/Subtitle";
 import Title from "../screens/Title";
 import Work from "../screens/Work";
 
-import styles from '/styles/components/widgets/main.module.scss'
-
 const initState = {
   title: {
     prefix: "Hi, I'm ",
@@ -116,7 +114,7 @@ export default function Main() {
 
   // console.log(info);
   return (
-    <main className={styles.main}>
+    <main className="px-5 py-8 sm:px-12 sm:py-12">
       <Title 
         data={info?.title}
         onChangeInfo={handleOnChangeInfo} 
