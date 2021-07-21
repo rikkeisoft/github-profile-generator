@@ -110,8 +110,8 @@ export default function Main() {
       },
     };
     // console.log(newInfo);
-    // setInfo(newInfo);
-    // localStorage.setItem('info', JSON.stringify(newInfo));
+    setInfo(newInfo);
+    localStorage.setItem('info', JSON.stringify(newInfo));
   }
 
   // console.log(info);

@@ -3,17 +3,14 @@ import Input from "@components/elements/Input";
 import styles from '/styles/components/screens/work.module.scss'
 
 export default function Work({ data, onChangeInfo }) {
-  console.log(data);
-
   const handleOnChangeInput = (newValue, key) => {
+    // expected: { prefix: "prefix", value: { currentWork: "abcxyz" } }
     const newWork = {
       key,
       value: newValue,
     }
 
-    console.log(newWork);
-
-    // onChangeInfo(newWork);
+    onChangeInfo(newWork);
   }
 
   return (
@@ -24,24 +21,21 @@ export default function Work({ data, onChangeInfo }) {
           data.slice(0, 3).map(obj => (
             <div className={styles.work__input__info} key={obj.prefix}>
               <Input
-                id="prefix"
                 name={obj.diffKey} 
                 defaultValue={obj.prefix}
-                onChangeInput={handleOnChangeInput}
+                onChangeInput={value => handleOnChangeInput(value, "prefix")}
               />
               <Input
-                id="projectName"
                 name={obj.diffKey}
                 placeholder="project name"
                 defaultValue={obj.projectName}
-                onChangeInput={handleOnChangeInput}
+                onChangeInput={value => handleOnChangeInput(value, "projectName")}
               />
               <Input
-                id="projectLink"
                 name={obj.diffKey}
                 placeholder="project link"
                 defaultValue={obj.link}
-                onChangeInput={handleOnChangeInput}
+                onChangeInput={value => handleOnChangeInput(value, "link")}
               />
             </div>
           ))
@@ -51,17 +45,15 @@ export default function Work({ data, onChangeInfo }) {
           data.slice(3).map(obj => (
             <div className={styles.work__input__info} key={obj.prefix}>
               <Input
-                id="prefix"
                 name={obj.diffKey} 
                 defaultValue={obj.prefix}
-                onChangeInput={handleOnChangeInput}
+                onChangeInput={value => handleOnChangeInput(value, "prefix")}
               />
               <Input
-                id="data"
                 name={obj.diffKey}
                 defaultValue={obj.data}
                 placeholder={obj.placeholder}
-                onChangeInput={handleOnChangeInput}
+                onChangeInput={value => handleOnChangeInput(value, "data")}
               />
           </div>
           ))
