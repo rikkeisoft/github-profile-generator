@@ -1,7 +1,5 @@
 import Input from "@components/elements/Input";
 
-import styles from '/styles/components/screens/work.module.scss'
-
 export default function Work({ data, onChangeInfo }) {
   const handleOnChangeInput = (newValue, key) => {
     // expected: { prefix: "prefix", value: { currentWork: "abcxyz" } }
@@ -14,12 +12,12 @@ export default function Work({ data, onChangeInfo }) {
   }
 
   return (
-    <div className={styles.work}>
+    <div className="mb-8">
       <h2 className="title">Work</h2>
-      <div className={styles.work__input}>
+      <div className="mt-2">
         {
           data.slice(0, 3).map(obj => (
-            <div className={styles.work__input__info} key={obj.prefix}>
+            <div className="mb-6 sm:flex" key={obj.prefix}>
               <Input
                 name={obj.diffKey} 
                 defaultValue={obj.prefix}
@@ -43,7 +41,7 @@ export default function Work({ data, onChangeInfo }) {
 
         {
           data.slice(3).map(obj => (
-            <div className={styles.work__input__info} key={obj.prefix}>
+            <div className="mb-6 sm:flex" key={obj.prefix}>
               <Input
                 name={obj.diffKey} 
                 defaultValue={obj.prefix}

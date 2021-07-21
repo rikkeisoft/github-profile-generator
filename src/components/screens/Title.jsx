@@ -1,7 +1,5 @@
 import Input from "../elements/Input";
 
-import styles from '/styles/components/screens/title.module.scss'
-
 export default function Title({ data, onChangeInfo }) {
   const handleOnChangeInput = newValue => {
     const newTitle = {
@@ -13,17 +11,17 @@ export default function Title({ data, onChangeInfo }) {
   }
 
   return (
-    <div className={styles.title}>
+    <div className="pb-10">
       <h2 className="title">Title</h2>
-      <div className={styles.title__input}>
-        <div className={styles.title__input__first}>
+      <div className="flex flex-nowrap mt-2">
+        <div className="w-1/4">
           <Input 
             defaultValue={data?.prefix}
             name="prefix"
             onChangeInput={handleOnChangeInput}
           />
         </div>
-        <div className={styles.title__input__last}>
+        <div className="w-2/4 ml-6">
           <Input
             defaultValue={data?.name}
             placeholder="name"

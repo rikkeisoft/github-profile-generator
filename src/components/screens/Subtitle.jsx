@@ -1,7 +1,5 @@
 import Input from "@components/elements/Input";
 
-import styles from '/styles/components/screens/subtitle.module.scss'
-
 export default function Subtitle({ data, onChangeInfo }) {
   const handleOnChangeInput = newValue => {
     const newSubtitle = {
@@ -13,12 +11,12 @@ export default function Subtitle({ data, onChangeInfo }) {
   }
 
   return (
-    <div className={styles.subtitle}>
+    <div className="pb-10">
       <h2 className="title">Subtitle</h2>
-      <div className={styles.subtitle__input}>
+      <div className="mt-2 sm:w-1/2">
         <Input 
-          defaultValue={data?.prefix}
-          placeholder={data?.sub}
+          defaultValue={data?.sub}
+          placeholder="A subtitle for README"
           name="sub"
           onChangeInput={handleOnChangeInput}
         />
