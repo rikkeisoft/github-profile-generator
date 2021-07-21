@@ -1,0 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.btn {
+	@apply py-1 px-4 mx-1 bg-gray-200 border-2 border-black text-xs tracking-widest;
+}
