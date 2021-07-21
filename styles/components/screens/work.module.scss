@@ -1,0 +1,19 @@
+.work {
+	@apply mb-8;
+
+	&__input {
+		@apply mt-2;
+
+		&__info {
+			@apply sm:flex;
+
+			& input:not(:first-child) {
+				@apply sm:ml-6;
+			}
+		}
+
+		&__info:not(:last-child) {
+			@apply mb-6;
+		}
+	}
+}
