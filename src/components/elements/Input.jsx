@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
-export default function Input({ defaultValue, name, placeholder, onChangeInput }) {
+export default function Input(props) {
   const [text, setText] = useState("");
+  const { defaultValue, name, placeholder = "", readOnly = false, onChangeInput } = props;
 
   useEffect(() => {
     defaultValue && setText(defaultValue);
@@ -21,8 +22,9 @@ export default function Input({ defaultValue, name, placeholder, onChangeInput }
       name={name}
       type="text"
       value={text}
+      readOnly={readOnly}
+      placeholder={placeholder}
       onChange={handleOnChangeInput}
-      placeholder={placeholder && placeholder}
     />
   )
 }

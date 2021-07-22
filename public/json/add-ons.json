@@ -1,0 +1,56 @@
+[
+  {
+    "key": "visitorsBadge",
+    "content": "display visitors count badge",
+    "checked": false,
+    "canModify": true
+  },
+  {
+    "key": "githubTrophy",
+    "content": "display github trophy",
+    "checked": false,
+    "canModify": false
+  },
+  {
+    "key": "githubStatsCard",
+    "content": "display github profile stats card",
+    "checked": false,
+    "canModify": true
+  },
+  {
+    "key": "topSkills",
+    "content": "display top skills",
+    "checked": false,
+    "canModify": true
+  },
+  {
+    "key": "githubStreakStats",
+    "content": "display github streak stats",
+    "checked": false,
+    "canModify": true
+  },
+  {
+    "key": "twitterBadge",
+    "content": "display twitter badge",
+    "checked": false,
+    "canModify": false
+  },
+  {
+    "key": "devDynamicBlog",
+    "content": "display latest dev.to blogs dynamically (GitHub Action)",
+    "checked": false,
+    "canModify": false
+  },
+  {
+    "key": "mediumDynamicBlog",
+    "content": "display latest medium blogs dynamically (GitHub Action)",
+    "checked": false,
+    "canModify": false
+  },
+  {
+    "key": "personalDynamicBlog",
+    "content": "display latest blogs from your personal blog dynamically (GitHub Action)",
+    "checked": false,
+    "canModify": false
+  }
+]

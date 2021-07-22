@@ -1,15 +1,10 @@
-import Image from 'next/image'
-import Logo from '/public/img/logo.png'
-
 export default function Header() {
   return (
     <div className="flex flex-col justify-center items-center py-1 border-b border-gray-300">
-      <Image 
-        src={Logo} 
-        width={50} 
-        height={50} 
+      <img
+        src="https://rahuldkjain.github.io/gh-profile-readme-generator/static/mdg-040f54e2f6c858e0a3dcf568c3f2b6f1.png"
         alt="Logo"
-        className="cursor-pointer"
+        className="w-12 h-12 cursor-pointer"
       />
       <span className="leading-5 text-sm font-medium text-blue-900 cursor-pointer sm:text-2xl">GitHub Profile README Generator</span>
       <div className="flex my-1">

@@ -1,80 +1,16 @@
+import Skills from "@components/screens/Skills";
 import { useEffect, useState } from "react";
 import Subtitle from "../screens/Subtitle";
 import Title from "../screens/Title";
 import Work from "../screens/Work";
+import Social from "@components/screens/Social";
+import AddOn from "@components/screens/AddOn";
 
-const initState = {
-  title: {
-    prefix: "Hi, I'm ",
-    name: null,
-  },
-  subtitle: {
-    sub: "A subtitle for README",
-  },
-  prefix: {
-    currentWork: "🔭 I’m currently working on",
-    collaborateOn: "👯 I’m looking to collaborate on",
-    helpWith: "🤝 I’m looking for help with",
-    currentLearn: "🌱 I’m currently learning",
-    askMe: "💬 Ask me about",
-    reachMe: "📫 How to reach me",
-    myProjects: "👨‍💻 All of my projects are available at",
-    myArticles: "📝 I regularly write articles on",
-    myExp: "📄 Know about my experiences",
-    fact: "⚡ Fun fact",
-  },
-  projectName: {
-    currentWork: "",
-    collaborateOn: "",
-    helpWith: "",
-  },
-  link: {
-    currentWork: "",
-    collaborateOn: "",
-    helpWith: "",
-  },
-  data: {
-    currentLearn: "",
-    askMe: "",
-    reachMe: "",
-    myProjects: "",
-    myArticles: "",
-    myExp: "",
-    fact: "",
-  },
-  placeholder: {
-    currentLearn: "Frameworks, courses etc.",
-    askMe: "react, vue and gsap",
-    reachMe: "example@gmail.com",
-    myProjects: "portfolio link",
-    myArticles: "blog link",
-    myExp: "resume link",
-    fact: "I think I am funny",
-  },
-}
-
-const mapObjToArr = obj => {
-  let result = [];
-
-  for (const prefixKey in obj.prefix) {
-    if (obj.prefix.hasOwnProperty) {
-      let newObj = {};
-      for (const key in obj) {
-        if (obj.hasOwnProperty(key) && obj[key].hasOwnProperty(prefixKey)) {
-          newObj = {
-            ...newObj,
-            [key]: obj[key][prefixKey],
-            diffKey: prefixKey,
-          }
-        }
-      }
-      
-      result.push(newObj)
-    }
-  }
-
-  return result;
-}
+import initState from "public/json/initData.json"
+import dataSkills from 'public/json/skills.json';
+import socialData from 'public/json/social.json'
+import addonData from 'public/json/add-ons.json'
+import { addCheckedProperty, convertValue, mapObjToArr } from "src/utils/convertData";
 
 export default function Main() {
   const [info, setInfo] = useState(null);
@@ -86,6 +22,9 @@ export default function Main() {
     placeholder: info?.placeholder,
   }
   const workArr = mapObjToArr(workObj);
+  const skills = addCheckedProperty(dataSkills, info?.skills);
+  const social = convertValue(socialData, info?.social, "value");
+  const addon = convertValue(addonData, info?.add_ons, "checked");
 
   useEffect(() => {
     const localInfo = JSON.parse(localStorage.getItem('info'));
@@ -125,6 +64,18 @@ export default function Main() {
       />
       <Work 
         data={workArr}
+        onChangeInfo={handleOnChangeInfo}
+      />
+      <Skills
+        data={skills} 
+        onChangeInfo={handleOnChangeInfo}
+      />
+      <Social
+        data={social} 
+        onChangeInfo={handleOnChangeInfo}
+      />
+      <AddOn 
+        data={addon} 
         onChangeInfo={handleOnChangeInfo}
       />
     </main>
