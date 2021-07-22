@@ -206,5 +206,30 @@
     "linux": false,
     "git": false,
     "arduino": false
+  },
+  "social": {
+    "github": "",
+    "twitter": "",
+    "devto": "",
+    "codepen": "",
+    "codesanbox": "",
+    "stackoverflow": "",
+    "linkedin": "",
+    "kaggle": "",
+    "facebook": "",
+    "instagram": "",
+    "dribble": "",
+    "behance": "",
+    "medium": "",
+    "youtube": "",
+    "codechef": "",
+    "hackerrank": "",
+    "codeforces": "",
+    "leetcode": "",
+    "topcoder": "",
+    "hackerearth": "",
+    "gfg": "",
+    "dicord": "",
+    "rss": ""
   }
 }

@@ -18,6 +18,7 @@ module.exports = {
       "download.blender.org",
       "gist.githubusercontent.com",
       "rahuldkjain.github.io",
+      "cdn.jsdelivr.net",
     ],
   },
 }

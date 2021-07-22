@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import Subtitle from "../screens/Subtitle";
 import Title from "../screens/Title";
 import Work from "../screens/Work";
+import Social from "@components/screens/Social";
 
 import initState from "public/json/initData.json"
 import dataSkills from 'public/json/skills.json';
+import socialData from 'public/json/social.json'
 
 // for Work part
 const mapObjToArr = obj => {
@@ -54,6 +56,21 @@ const addCheckedProperty = (dataSkills, skills) => {
   return result;
 }
 
+// for Social part
+const addValue = (dataSocial, social) => {
+  if (!social)
+    return;
+
+  let result = dataSocial.map(item => {
+    return {
+      ...item,
+      value: social[item.key],
+    }
+  });
+
+  return result;
+}
+
 export default function Main() {
   const [info, setInfo] = useState(null);
   const workObj = {
@@ -65,6 +82,7 @@ export default function Main() {
   }
   const workArr = mapObjToArr(workObj);
   const skills = addCheckedProperty(dataSkills, info?.skills);
+  const social = addValue(socialData, info?.social);
 
   useEffect(() => {
     const localInfo = JSON.parse(localStorage.getItem('info'));
@@ -108,6 +126,10 @@ export default function Main() {
       />
       <Skills
         data={skills} 
+        onChangeInfo={handleOnChangeInfo}
+      />
+      <Social
+        data={social} 
         onChangeInfo={handleOnChangeInfo}
       />
     </main>
