@@ -5,7 +5,7 @@ export default function SocialInput({ name, imgSrc, placeholder, value, onChange
     onChangeSocialInput(newValue)
   }
   return (
-    <div className="w-1/3 mb-8 even:ml-16 flex justify-center items-center">
+    <div className="w-1/3 mb-8 last:mb-0 even:ml-16 flex justify-center items-center">
       <img
         src={imgSrc}
         alt="logo"

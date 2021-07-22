@@ -4,72 +4,13 @@ import Subtitle from "../screens/Subtitle";
 import Title from "../screens/Title";
 import Work from "../screens/Work";
 import Social from "@components/screens/Social";
+import AddOn from "@components/screens/AddOn";
 
 import initState from "public/json/initData.json"
 import dataSkills from 'public/json/skills.json';
 import socialData from 'public/json/social.json'
-
-// for Work part
-const mapObjToArr = obj => {
-  let result = [];
-
-  for (const prefixKey in obj.prefix) {
-    if (obj.prefix.hasOwnProperty) {
-      let newObj = {};
-      for (const key in obj) {
-        if (obj.hasOwnProperty(key) && obj[key].hasOwnProperty(prefixKey)) {
-          newObj = {
-            ...newObj,
-            [key]: obj[key][prefixKey],
-            diffKey: prefixKey,
-          }
-        }
-      }
-      
-      result.push(newObj)
-    }
-  }
-
-  return result;
-}
-
-// for Skills part
-const addCheckedProperty = (dataSkills, skills) => {
-  if (!skills)
-    return;
-  
-  let result = {...dataSkills}
-  for (const key in dataSkills) {
-    if (dataSkills.hasOwnProperty(key)) {
-      const newArr = result[key].map(dataSkill => {
-        const checked = skills[dataSkill.name];
-        return {
-          ...dataSkill,
-          checked,
-        }
-      });
-
-      result = { ...result, [key]: newArr };
-    }
-  }
-
-  return result;
-}
-
-// for Social part
-const addValue = (dataSocial, social) => {
-  if (!social)
-    return;
-
-  let result = dataSocial.map(item => {
-    return {
-      ...item,
-      value: social[item.key],
-    }
-  });
-
-  return result;
-}
+import addonData from 'public/json/add-ons.json'
+import { addCheckedProperty, convertValue, mapObjToArr } from "src/utils/convertData";
 
 export default function Main() {
   const [info, setInfo] = useState(null);
@@ -82,7 +23,8 @@ export default function Main() {
   }
   const workArr = mapObjToArr(workObj);
   const skills = addCheckedProperty(dataSkills, info?.skills);
-  const social = addValue(socialData, info?.social);
+  const social = convertValue(socialData, info?.social, "value");
+  const addon = convertValue(addonData, info?.add_ons, "checked");
 
   useEffect(() => {
     const localInfo = JSON.parse(localStorage.getItem('info'));
@@ -130,6 +72,10 @@ export default function Main() {
       />
       <Social
         data={social} 
+        onChangeInfo={handleOnChangeInfo}
+      />
+      <AddOn 
+        data={addon} 
         onChangeInfo={handleOnChangeInfo}
       />
     </main>
