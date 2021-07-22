@@ -12,7 +12,7 @@ export default function Work({ data, onChangeInfo }) {
   }
 
   return (
-    <div className="mb-8">
+    <div className="mb-14">
       <h2 className="title">Work</h2>
       <div className="mt-2">
         {

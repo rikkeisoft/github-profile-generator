@@ -1,58 +1,13 @@
+import Skills from "@components/screens/Skills";
 import { useEffect, useState } from "react";
 import Subtitle from "../screens/Subtitle";
 import Title from "../screens/Title";
 import Work from "../screens/Work";
 
-const initState = {
-  title: {
-    prefix: "Hi, I'm ",
-    name: null,
-  },
-  subtitle: {
-    sub: "A subtitle for README",
-  },
-  prefix: {
-    currentWork: "🔭 I’m currently working on",
-    collaborateOn: "👯 I’m looking to collaborate on",
-    helpWith: "🤝 I’m looking for help with",
-    currentLearn: "🌱 I’m currently learning",
-    askMe: "💬 Ask me about",
-    reachMe: "📫 How to reach me",
-    myProjects: "👨‍💻 All of my projects are available at",
-    myArticles: "📝 I regularly write articles on",
-    myExp: "📄 Know about my experiences",
-    fact: "⚡ Fun fact",
-  },
-  projectName: {
-    currentWork: "",
-    collaborateOn: "",
-    helpWith: "",
-  },
-  link: {
-    currentWork: "",
-    collaborateOn: "",
-    helpWith: "",
-  },
-  data: {
-    currentLearn: "",
-    askMe: "",
-    reachMe: "",
-    myProjects: "",
-    myArticles: "",
-    myExp: "",
-    fact: "",
-  },
-  placeholder: {
-    currentLearn: "Frameworks, courses etc.",
-    askMe: "react, vue and gsap",
-    reachMe: "example@gmail.com",
-    myProjects: "portfolio link",
-    myArticles: "blog link",
-    myExp: "resume link",
-    fact: "I think I am funny",
-  },
-}
+import initState from "public/json/initData.json"
+import dataSkills from 'public/json/skills.json';
 
+// for Work part
 const mapObjToArr = obj => {
   let result = [];
 
@@ -76,6 +31,29 @@ const mapObjToArr = obj => {
   return result;
 }
 
+// for Skills part
+const addCheckedProperty = (dataSkills, skills) => {
+  if (!skills)
+    return;
+  
+  let result = {...dataSkills}
+  for (const key in dataSkills) {
+    if (dataSkills.hasOwnProperty(key)) {
+      const newArr = result[key].map(dataSkill => {
+        const checked = skills[dataSkill.name];
+        return {
+          ...dataSkill,
+          checked,
+        }
+      });
+
+      result = { ...result, [key]: newArr };
+    }
+  }
+
+  return result;
+}
+
 export default function Main() {
   const [info, setInfo] = useState(null);
   const workObj = {
@@ -86,6 +64,7 @@ export default function Main() {
     placeholder: info?.placeholder,
   }
   const workArr = mapObjToArr(workObj);
+  const skills = addCheckedProperty(dataSkills, info?.skills);
 
   useEffect(() => {
     const localInfo = JSON.parse(localStorage.getItem('info'));
@@ -125,6 +104,10 @@ export default function Main() {
       />
       <Work 
         data={workArr}
+        onChangeInfo={handleOnChangeInfo}
+      />
+      <Skills
+        data={skills} 
         onChangeInfo={handleOnChangeInfo}
       />
     </main>
