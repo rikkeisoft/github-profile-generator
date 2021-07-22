@@ -1,0 +1,610 @@
+{
+  "proLang": [
+    {
+      "name": "c",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
+    },
+    {
+      "name": "cplusplus",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
+    },
+    {
+      "name": "csharp",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg"
+    },
+    {
+      "name": "go",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+    },
+    {
+      "name": "java",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+    },
+    {
+      "name": "javascript",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+    },
+    {
+      "name": "typescript",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+    },
+    {
+      "name": "php",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+    },
+    {
+      "name": "perl",
+      "src": "https://api.iconify.design/logos-perl.svg"
+    },
+    {
+      "name": "ruby",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg"
+    },
+    {
+      "name": "scala",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/scala/scala-original.svg"
+    },
+    {
+      "name": "pyhton",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+    },
+    {
+      "name": "swift",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg"
+    },
+    {
+      "name": "objectivec",
+      "src": "https://www.vectorlogo.zone/logos/apple_objectivec/apple_objectivec-icon.svg"
+    },
+    {
+      "name": "clojure",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Clojure_logo.svg"
+    },
+    {
+      "name": "rust",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg"
+    },
+    {
+      "name": "haskell",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Haskell-Logo.svg"
+    },
+    {
+      "name": "coffeescript",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/coffeescript/coffeescript-original-wordmark.svg"
+    },
+    {
+      "name": "elixir",
+      "src": "https://www.vectorlogo.zone/logos/elixir-lang/elixir-lang-icon.svg"
+    },
+    {
+      "name": "erlang",
+      "src": "https://www.vectorlogo.zone/logos/erlang/erlang-official.svg"
+    }
+  ],
+  "frontendDev": [
+    {
+      "name": "vue",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg"
+    },
+    {
+      "name": "react",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+    },
+    {
+      "name": "svetle",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg"
+    },
+    {
+      "name": "angularjs",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original-wordmark.svg"
+    },
+    {
+      "name": "angular",
+      "src": "https://angular.io/assets/images/logos/angular/angular.svg"
+    },
+    {
+      "name": "backbonejs",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/backbonejs/backbonejs-original-wordmark.svg"
+    },
+    {
+      "name": "bootstrap",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg"
+    },
+    {
+      "name": "vuetify",
+      "src": "https://bestofjs.org/logos/vuetify.svg"
+    },
+    {
+      "name": "css3",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
+    },
+    {
+      "name": "html5",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+    },
+    {
+      "name": "pug",
+      "src": "https://cdn.worldvectorlogo.com/logos/pug.svg"
+    },
+    {
+      "name": "gulp",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/gulp/gulp-plain.svg"
+    },
+    {
+      "name": "sass",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
+    },
+    {
+      "name": "redux",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
+    },
+    {
+      "name": "webpack",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg"
+    },
+    {
+      "name": "babel",
+      "src": "https://www.vectorlogo.zone/logos/babeljs/babeljs-icon.svg"
+    },
+    {
+      "name": "tailwind",
+      "src": "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+    },
+    {
+      "name": "materialize",
+      "src": "https://raw.githubusercontent.com/prplx/svg-logos/5585531d45d294869c4eaab4d7cf2e9c167710a9/svg/materialize.svg"
+    },
+    {
+      "name": "bulma",
+      "src": "https://raw.githubusercontent.com/gilbarbara/logos/804dc257b59e144eaca5bc6ffd16949752c6f789/logos/bulma.svg"
+    },
+    {
+      "name": "gtk",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/7/71/GTK_logo.svg"
+    },
+    {
+      "name": "qt",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Qt_logo_2016.svg"
+    },
+    {
+      "name": "wx_widgets",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/b/bb/WxWidgets.svg"
+    },
+    {
+      "name": "ember",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/ember/ember-original-wordmark.svg"
+    }
+  ],
+  "backendDev": [
+    {
+      "name": "nodejs",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
+    },
+    {
+      "name": "spring",
+      "src": "https://www.vectorlogo.zone/logos/springio/springio-icon.svg"
+    },
+    {
+      "name": "express",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg"
+    },
+    {
+      "name": "graphql",
+      "src": "https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg"
+    },
+    {
+      "name": "kafka",
+      "src": "https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg"
+    },
+    {
+      "name": "solr",
+      "src": "https://www.vectorlogo.zone/logos/apache_solr/apache_solr-icon.svg"
+    },
+    {
+      "name": "rabbitMQ",
+      "src": "https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg"
+    },
+    {
+      "name": "hadoop",
+      "src": "https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-icon.svg"
+    },
+    {
+      "name": "nginx",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg"
+    },
+    {
+      "name": "openresty",
+      "src": "https://openresty.org/images/logo.png"
+    }
+  ],
+  "mobileDev": [
+    {
+      "name": "android",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg"
+    },
+    {
+      "name": "flutter",
+      "src": "https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg"
+    },
+    {
+      "name": "dart",
+      "src": "https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg"
+    },
+    {
+      "name": "kotlin",
+      "src": "https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg"
+    },
+    {
+      "name": "nativescript",
+      "src": "https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/nativescript.svg"
+    },
+    {
+      "name": "xamarin",
+      "src": "https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/xamarin.svg"
+    },
+    {
+      "name": "reactnative",
+      "src": "https://reactnative.dev/img/header_logo.svg"
+    },
+    {
+      "name": "ionic",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg"
+    },
+    {
+      "name": "apachecordova",
+      "src": "https://www.vectorlogo.zone/logos/apache_cordova/apache_cordova-icon.svg"
+    }
+  ],
+  "ai_ml": [
+    {
+      "name": "tensorflow",
+      "src": "https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg"
+    },
+    {
+      "name": "pytorch",
+      "src": "https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg"
+    },
+    {
+      "name": "opencv",
+      "src": "https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg"
+    },
+    {
+      "name": "scikit_learn",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
+    }
+  ],
+  "database": [
+    {
+      "name": "mongodb",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
+    },
+    {
+      "name": "mysql",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
+    },
+    {
+      "name": "postgresql",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
+    },
+    {
+      "name": "redis",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg"
+    },
+    {
+      "name": "oracle",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg"
+    },
+    {
+      "name": "cassandra",
+      "src": "https://www.vectorlogo.zone/logos/apache_cassandra/apache_cassandra-icon.svg"
+    },
+    {
+      "name": "couchdb",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/0d6c64dbbf311879f7d563bfc3ccf559f9ed111c/icons/couchdb/couchdb-original.svg"
+    },
+    {
+      "name": "hive",
+      "src": "https://www.vectorlogo.zone/logos/apache_hive/apache_hive-icon.svg"
+    },
+    {
+      "name": "realm",
+      "src": "https://raw.githubusercontent.com/bestofjs/bestofjs-webui/8665e8c267a0215f3159df28b33c365198101df5/public/logos/realm.svg"
+    },
+    {
+      "name": "mariadb",
+      "src": "https://www.vectorlogo.zone/logos/mariadb/mariadb-icon.svg"
+    },
+    {
+      "name": "cockroachdb",
+      "src": "https://cdn.worldvectorlogo.com/logos/cockroachdb.svg"
+    },
+    {
+      "name": "elasticsearch",
+      "src": "https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg"
+    },
+    {
+      "name": "sqlite",
+      "src": "https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg"
+    },
+    {
+      "name": "sqlserver",
+      "src": "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg"
+    }
+  ],
+  "dataVisual": [
+    {
+      "name": "d3js",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/d3js/d3js-original.svg"
+    },
+    {
+      "name": "chartjs",
+      "src": "https://www.chartjs.org/media/logo-title.svg"
+    },
+    {
+      "name": "canvasjs",
+      "src": "https://raw.githubusercontent.com/Hardik0307/Hardik0307/master/assets/canvasjs-charts.svg"
+    },
+    {
+      "name": "kibana",
+      "src": "https://www.vectorlogo.zone/logos/elasticco_kibana/elasticco_kibana-icon.svg"
+    },
+    {
+      "name": "grafana",
+      "src": "https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg"
+    }
+  ],
+  "devops": [
+    {
+      "name": "aws",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+    },
+    {
+      "name": "docker",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
+    },
+    {
+      "name": "jenkins",
+      "src": "https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg"
+    },
+    {
+      "name": "gcp",
+      "src": "https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg"
+    },
+    {
+      "name": "kubernetes",
+      "src": "https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg"
+    },
+    {
+      "name": "bash",
+      "src": "https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg"
+    },
+    {
+      "name": "azure",
+      "src": "https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg"
+    },
+    {
+      "name": "vagrant",
+      "src": "https://www.vectorlogo.zone/logos/vagrantup/vagrantup-icon.svg"
+    },
+    {
+      "name": "circleci",
+      "src": "https://www.vectorlogo.zone/logos/circleci/circleci-icon.svg"
+    },
+    {
+      "name": "travisci",
+      "src": "https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg"
+    }
+  ],
+  "baas": [
+    {
+      "name": "firebase",
+      "src": "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
+    },
+    {
+      "name": "appwrite",
+      "src": "https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg"
+    },
+    {
+      "name": "amplify",
+      "src": "https://docs.amplify.aws/assets/logo-dark.svg"
+    },
+    {
+      "name": "heroku",
+      "src": "https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg"
+    }
+  ],
+  "framework": [
+    {
+      "name": "django",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-original.svg"
+    },
+    {
+      "name": "dotnet",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg"
+    },
+    {
+      "name": "electron",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/electron/electron-original.svg"
+    },
+    {
+      "name": "symphony",
+      "src": "https://symfony.com/logos/symfony_black_03.svg"
+    },
+    {
+      "name": "laravel",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg"
+    },
+    {
+      "name": "codeigniter",
+      "src": "https://cdn.worldvectorlogo.com/logos/codeigniter.svg"
+    },
+    {
+      "name": "rails",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg"
+    },
+    {
+      "name": "flask",
+      "src": "https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg"
+    },
+    {
+      "name": "quasar",
+      "src": "https://cdn.quasar.dev/logo/svg/quasar-logo.svg"
+    }
+  ],
+  "testing": [
+    {
+      "name": "cypress",
+      "src": "https://raw.githubusercontent.com/simple-icons/simple-icons/6e46ec1fc23b60c8fd0d2f2ff46db82e16dbd75f/icons/cypress.svg"
+    },
+    {
+      "name": "selenium",
+      "src": "https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg"
+    },
+    {
+      "name": "jest",
+      "src": "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg"
+    },
+    {
+      "name": "mocha",
+      "src": "https://www.vectorlogo.zone/logos/mochajs/mochajs-icon.svg"
+    },
+    {
+      "name": "puppeteer",
+      "src": "https://www.vectorlogo.zone/logos/pptrdev/pptrdev-official.svg"
+    },
+    {
+      "name": "karma",
+      "src": "https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/karma.svg"
+    },
+    {
+      "name": "jasmine",
+      "src": "https://www.vectorlogo.zone/logos/jasmine/jasmine-icon.svg"
+    }
+  ],
+  "software": [
+    {
+      "name": "illustrator",
+      "src": "https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg"
+    },
+    {
+      "name": "photoshop",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg"
+    },
+    {
+      "name": "xd",
+      "src": "https://cdn.worldvectorlogo.com/logos/adobe-xd.svg"
+    },
+    {
+      "name": "figma",
+      "src": "https://www.vectorlogo.zone/logos/figma/figma-icon.svg"
+    },
+    {
+      "name": "blender",
+      "src": "https://download.blender.org/branding/community/blender_community_badge_white.svg"
+    },
+    {
+      "name": "sketch",
+      "src": "https://www.vectorlogo.zone/logos/sketchapp/sketchapp-icon.svg"
+    },
+    {
+      "name": "invision",
+      "src": "https://www.vectorlogo.zone/logos/invisionapp/invisionapp-icon.svg"
+    },
+    {
+      "name": "framer",
+      "src": "https://www.vectorlogo.zone/logos/framer/framer-icon.svg"
+    },
+    {
+      "name": "matlab",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png"
+    },
+    {
+      "name": "postman",
+      "src": "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+    }
+  ],
+  "staticGen": [
+    {
+      "name": "gatsby",
+      "src": "https://www.vectorlogo.zone/logos/gatsbyjs/gatsbyjs-icon.svg"
+    },
+    {
+      "name": "gridsome",
+      "src": "https://www.vectorlogo.zone/logos/gridsome/gridsome-icon.svg"
+    },
+    {
+      "name": "hugo",
+      "src": "https://api.iconify.design/logos-hugo.svg"
+    },
+    {
+      "name": "jekyll",
+      "src": "https://www.vectorlogo.zone/logos/jekyllrb/jekyllrb-icon.svg"
+    },
+    {
+      "name": "nextjs",
+      "src": "https://cdn.worldvectorlogo.com/logos/nextjs-3.svg"
+    },
+    {
+      "name": "nuxtjs",
+      "src": "https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-icon.svg"
+    },
+    {
+      "name": "llty",
+      "src": "https://gist.githubusercontent.com/vivek32ta/c7f7bf583c1fb1c58d89301ea40f37fd/raw/f4c85cce5790758286b8f155ef9a177710b995df/11ty.svg"
+    },
+    {
+      "name": "scully",
+      "src": "https://raw.githubusercontent.com/scullyio/scully/main/assets/logos/SVG/scullyio-icon.svg"
+    },
+    {
+      "name": "sculpin",
+      "src": "https://gist.githubusercontent.com/vivek32ta/c7f7bf583c1fb1c58d89301ea40f37fd/raw/1782aef8672484698c0dd407f900c4a329ed5bc4/sculpin.svg"
+    },
+    {
+      "name": "sapper",
+      "src": "https://raw.githubusercontent.com/bestofjs/bestofjs-webui/master/public/logos/sapper.svg"
+    },
+    {
+      "name": "vuepress",
+      "src": "https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/drivers/webextension/images/icons/VuePress.svg"
+    },
+    {
+      "name": "hexo",
+      "src": "https://www.vectorlogo.zone/logos/hexoio/hexoio-icon.svg"
+    },
+    {
+      "name": "middleman",
+      "src": "https://raw.githubusercontent.com/leungwensen/svg-icon/b84b3f3a3da329b7c1d02346865f8e98beb05413/dist/svg/logos/middleman.svg"
+    }
+  ],
+  "gameEngine": [
+    {
+      "name": "unity",
+      "src": "https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg"
+    },
+    {
+      "name": "unreal",
+      "src": "https://raw.githubusercontent.com/kenangundogan/fontisto/036b7eca71aab1bef8e6a0518f7329f13ed62f6b/icons/svg/brand/unreal-engine.svg"
+    }
+  ],
+  "automation": [
+    {
+      "name": "zapier",
+      "src": "https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg"
+    }
+  ],
+  "other": [
+    {
+      "name": "linux",
+      "src": "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
+    },
+    {
+      "name": "git",
+      "src": "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
+    },
+    {
+      "name": "arduino",
+      "src": "https://cdn.worldvectorlogo.com/logos/arduino-1.svg"
+    }
+  ]
+}
