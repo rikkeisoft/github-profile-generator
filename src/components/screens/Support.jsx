@@ -17,7 +17,7 @@ export default function Support({ data, onChangeInfo }) {
         <img
           src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
           alt="buymeacoffee"
-          className="w-24 h-8 sm:h-12 sm:w-3/12"
+          className="w-24 h-8 sm:h-12 sm:w-48"
         />
         <div className="ml-2">
           <Input

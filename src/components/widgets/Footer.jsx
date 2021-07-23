@@ -2,7 +2,7 @@ import { DISCORD_IMG_URL } from "src/utils/constants";
 
 export default function Footer() {
   return (
-    <footer className="py-6 px-4 border-t-4 border-gray-200 bg-blue-50">
+    <footer className="py-6 px-4 border-t-4 border-gray-200 bg-blue-50 sm:px-20">
       <div className="mb-6 flex flex-col sm:justify-between sm:flex-row">
         <div className="mb-2 order-4 sm:mb-0 sm:order-1">
           <img
