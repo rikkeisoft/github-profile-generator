@@ -14,6 +14,7 @@ import { addCheckedProperty, convertValue, mapObjToArr } from "src/utils/convert
 import Support from "@components/screens/Support";
 import { LOCAL_STORAGE_KEY } from "src/utils/constants";
 import EndMain from "@components/screens/EndMain";
+import ConfigForm from "@components/screens/ConfigForm";
 
 export default function Main() {
   const [info, setInfo] = useState(initState);
@@ -40,7 +41,6 @@ export default function Main() {
   }, []);
 
   const handleOnChangeInfo = newValue => {
-    // console.log(newValue);
     const { key, value } = newValue;
     const newInfo = {
       ...info,
@@ -49,12 +49,16 @@ export default function Main() {
         ...value,
       },
     };
-    // console.log(newInfo);
+    
     setInfo(newInfo);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newInfo));
   }
 
-  // console.log(info);
+  const handleOnResetForm = () => {
+    setInfo(initState);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initState));
+  }
+
   return (
     <main className="px-5 py-8 sm:px-12 sm:py-12">
       <Title 
@@ -88,6 +92,9 @@ export default function Main() {
       <EndMain
         dataSocial={social}
         dataAddons={addon}
+      />
+      <ConfigForm 
+        onResetForm={handleOnResetForm}
       />
     </main>
   )

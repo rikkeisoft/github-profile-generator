@@ -62,7 +62,7 @@ export default function EndMain({ dataSocial, dataAddons }) {
   }, [dataSocial, dataAddons]);
 
   return (
-    <div>
+    <div className="mb-12">
       <div className="mb-4">
         {
           errors.map((error, index) => (

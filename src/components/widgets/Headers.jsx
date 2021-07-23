@@ -12,7 +12,7 @@ export default function Header() {
           Star this repo 
           <span className="ml-1 text-purple-600">6169</span>
         </button>
-        <button className="sm:text-sm btn">
+        <button className="ml-4 sm:text-sm btn">
           Fork on Github 
           <span className="ml-1 text-purple-600">1063</span>
         </button>
