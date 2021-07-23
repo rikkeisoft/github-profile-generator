@@ -26,7 +26,7 @@ export default function ConfigForm({ onResetForm }) {
     <div className="px-4 py-3 border-2 border-blue-500">
       <div className="mb-10 flex items-center justify-between">
         <div className="flex items-center justify-items-start">
-          <h3 className="font-semibold">Config options</h3>
+          <h3 className="font-semibold sm:text-2xl">Config options</h3>
           <span className="ml-1 p-1 bg-green-600 text-white text-sm font-medium">new feature</span>
         </div>
         <button className="btn" onClick={onResetForm}>Reset form</button>
@@ -51,7 +51,7 @@ export default function ConfigForm({ onResetForm }) {
 
       <button className="mb-10 btn" onClick={handleRestore}>Restore</button>
 
-      <div>
+      <div className="sm:text-lg">
         <p className="text-green-700 text-lg">Tips</p>
         <p className="text-gray-600">* Enter the downloaded JSON text to restore.</p>
         <p className="text-gray-600">* Press reset to reset the form.</p>
