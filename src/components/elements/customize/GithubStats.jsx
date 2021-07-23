@@ -1,12 +1,62 @@
-export default function VisitorsBadge({ name }) {
-  
+import { useEffect, useState } from "react"
+import { LOCAL_STORAGE_KEY } from "src/utils/constants";
+
+const initValue = {
+  theme: "none",
+  titleColor: "#000000",
+  textColor: "#000000",
+  bgColor: "#000000",
+  hideBorder: false,
+  cacheSeconds: "1800",
+  locale: "en"
+}
+
+export default function GithubStats({ name }) {
+  const [stats, setStats] = useState(initValue);
+
+  useEffect(() => {
+    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+
+    setStats(info.customize[name]);
+  }, []);
+
+  const handleOnChangeValue = e => {
+    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    let newStats;
+    if (e.target.name === "hideBorder") 
+      newStats = {
+        ...stats,
+        hideBorder: e.target.checked,
+      }
+    else 
+      newStats = {
+        ...stats,
+        [e.target.name]: e.target.value,
+      }
+    const newCustomize = {
+      ...info,
+      customize: {
+        ...info.customize,
+        [name]: newStats,
+      },
+    }
+
+    setStats(newStats);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize));
+  }
+
   return (
     <div className="ml-6 p-2 w-3/4 border-2 border-black bg-blue-50">
-      <p className="text-lg border-b border-gray-500">Customize Github Stats Card</p>
-      <div className="mt-2 flex flex-col justify-center">
+      <p className="text-lg border-b border-gray-500">
+        { name === "githubStatsCard" ?
+            "Customize Github Stats Card" :
+            "Customize Top Skills Card"
+        }
+      </p>
+      <div className="mt-2 flex flex-col justify-center sm:text-lg">
         <label htmlFor="card-theme">
           Theme:&nbsp;
-          <select id="card-theme">
+          <select id="card-theme" name="theme" value={stats?.theme} onChange={handleOnChangeValue}>
             <option value="none">none</option>
             <option value="Dark">Dark</option>
             <option value="Radical">Radical</option>
@@ -25,9 +75,11 @@ export default function VisitorsBadge({ name }) {
           Title Color:&nbsp;
           <input 
             type="color"
+            name="titleColor"
             id="title-color"
-            value="#000000"
+            value={stats.titleColor}
             className="w-6"
+            onChange={handleOnChangeValue}
           />
         </label>
 
@@ -35,9 +87,11 @@ export default function VisitorsBadge({ name }) {
           Text Color:&nbsp;
           <input 
             type="color"
+            name="textColor"
             id="text-color"
-            value="#000000"
+            value={stats.textColor}
             className="w-6"
+            onChange={handleOnChangeValue}
           />
         </label>
 
@@ -45,9 +99,11 @@ export default function VisitorsBadge({ name }) {
           Background Color:&nbsp;
           <input 
             type="color"
+            name="bgColor"
             id="bg-color"
-            value="#000000"
+            value={stats.bgColor}
             className="w-6"
+            onChange={handleOnChangeValue}
           />
         </label>
 
@@ -55,8 +111,10 @@ export default function VisitorsBadge({ name }) {
           Hide border:&nbsp;
           <input 
             type="checkbox"
+            name="hideBorder"
             id="card-checkbox"
-            checked="false"
+            checked={stats.hideBorder}
+            onChange={handleOnChangeValue}
           />
         </label>
 
@@ -64,21 +122,25 @@ export default function VisitorsBadge({ name }) {
           Cache Seconds:&nbsp;
           <input 
             type="number"
+            name="cacheSeconds"
             id="card-cache"
-            value="1800"
+            value={stats.cacheSeconds}
             min="1800"
             max="86400"
             placeholder="1800"
+            onChange={handleOnChangeValue}
           />
         </label>
 
         <label htmlFor="card-locale">
-          Background Color:&nbsp;
+          Locale:&nbsp;
           <input 
             type="text"
+            name="locale"
             id="card-locale"
-            value="en"
-            className="w-6 text-sm"
+            value={stats.locale}
+            className="w-6"
+            onChange={handleOnChangeValue}
           />
         </label>
       </div>
