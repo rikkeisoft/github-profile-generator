@@ -26,7 +26,7 @@ export default function AddOnCheck({ content, name, checked, onCheckbox, canModi
           checked={checked}
           onChange={handleChoose}
         />
-        <label htmlFor={name} className="cursor-pointer sm:text-lg">{ content }</label>
+        <label htmlFor={name} className="cursor-pointer sm:text-xl">{ content }</label>
         {
           canModify && 
           <span className="ml-2 cursor-pointer" onClick={handleModifyComponent}>
@@ -48,7 +48,7 @@ export default function AddOnCheck({ content, name, checked, onCheckbox, canModi
 
       {
         isOpen && name === "visitorsBadge" &&
-        <VisitorsBadge name={name} />
+        <VisitorsBadge />
       }
       {
         isOpen && (name === "topSkills" || name === "githubStatsCard") &&
@@ -56,7 +56,7 @@ export default function AddOnCheck({ content, name, checked, onCheckbox, canModi
       }
       {
         isOpen && name === "githubStreakStats" &&
-        <StreakStats name={name} />
+        <StreakStats />
       }
     </>
   )

@@ -11,9 +11,13 @@ import dataSkills from 'public/json/skills.json';
 import socialData from 'public/json/social.json'
 import addonData from 'public/json/add-ons.json'
 import { addCheckedProperty, convertValue, mapObjToArr } from "src/utils/convertData";
+import Support from "@components/screens/Support";
+import { LOCAL_STORAGE_KEY } from "src/utils/constants";
+import EndMain from "@components/screens/EndMain";
+import ConfigForm from "@components/screens/ConfigForm";
 
 export default function Main() {
-  const [info, setInfo] = useState(null);
+  const [info, setInfo] = useState(initState);
   const workObj = {
     prefix: info?.prefix,
     projectName: info?.projectName,
@@ -27,9 +31,9 @@ export default function Main() {
   const addon = convertValue(addonData, info?.add_ons, "checked");
 
   useEffect(() => {
-    const localInfo = JSON.parse(localStorage.getItem('info'));
+    const localInfo = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (!localInfo) {
-      localStorage.setItem('info', JSON.stringify(initState));
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initState));
       setInfo(initState);
     } 
     else
@@ -37,7 +41,6 @@ export default function Main() {
   }, []);
 
   const handleOnChangeInfo = newValue => {
-    // console.log(newValue);
     const { key, value } = newValue;
     const newInfo = {
       ...info,
@@ -46,12 +49,16 @@ export default function Main() {
         ...value,
       },
     };
-    // console.log(newInfo);
+    
     setInfo(newInfo);
-    localStorage.setItem('info', JSON.stringify(newInfo));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newInfo));
   }
 
-  // console.log(info);
+  const handleOnResetForm = () => {
+    setInfo(initState);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initState));
+  }
+
   return (
     <main className="px-5 py-8 sm:px-12 sm:py-12">
       <Title 
@@ -77,6 +84,17 @@ export default function Main() {
       <AddOn 
         data={addon} 
         onChangeInfo={handleOnChangeInfo}
+      />
+      <Support
+        data={info?.support}
+        onChangeInfo={handleOnChangeInfo}
+      />
+      <EndMain
+        dataSocial={social}
+        dataAddons={addon}
+      />
+      <ConfigForm 
+        onResetForm={handleOnResetForm}
       />
     </main>
   )
