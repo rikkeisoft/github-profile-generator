@@ -249,7 +249,7 @@
       "color": "#0e75b6",
       "labelText": "Profile views"
     },
-    "githubStatCard": {
+    "githubStatsCard": {
       "theme": "none",
       "titleColor": "#000000",
       "textColor": "#000000",
@@ -270,5 +270,8 @@
     "streakStats": {
       "theme": "default"
     }
+  },
+  "support": {
+    "buyMeACoffee": ""
   }
 }

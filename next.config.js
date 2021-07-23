@@ -19,6 +19,7 @@ module.exports = {
       "gist.githubusercontent.com",
       "rahuldkjain.github.io",
       "cdn.jsdelivr.net",
+      "cdn.buymeacoffee.com",
     ],
   },
 }
