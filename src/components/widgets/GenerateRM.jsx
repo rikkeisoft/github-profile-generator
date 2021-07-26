@@ -22,31 +22,26 @@ export default function GenerateRM({ data, onGeneratePart }) {
   }
   const workData = mapObjToArr(workObj)
   const downloadJSONFileURL = getLocalstorageToFile()
-  
+
   useEffect(() => {
     setDownloadMDFileURL(saveREADMEFile(markdownRef))
   }, [])
 
   const handleChangeIsPreviewMD = () => setIsPreviewMD(!isPreviewMD)
-  const handleCopyToClipboard = markdownRef => navigator.clipboard.writeText(markdownRef.current.textContent)
+  const handleCopyToClipboard = (markdownRef) => navigator.clipboard.writeText(markdownRef.current.textContent)
 
   return (
     <div className="py-10 px-8">
       <div className="mb-6 flex justify-around items-center">
-        <button 
-          className="btn w-16 flex items-center justify-center sm:w-24" 
-          title="back"
-          onClick={onGeneratePart}
-        >
+        <button className="btn w-16 flex items-center justify-center sm:w-24" title="back" onClick={onGeneratePart}>
           <Back />
           <span className="hidden sm:ml-1 sm:inline sm:text-base">Back</span>
         </button>
 
-        {
-          !isPreviewMD && 
+        {!isPreviewMD && (
           <>
-            <button 
-              className="btn w-16 flex flex-col items-center justify-center sm:w-24" 
+            <button
+              className="btn w-16 flex flex-col items-center justify-center sm:w-24"
               title="copy"
               onClick={() => handleCopyToClipboard(markdownRef)}
             >
@@ -54,52 +49,45 @@ export default function GenerateRM({ data, onGeneratePart }) {
               <span className="hidden sm:ml-1 sm:inline sm:text-base">Copy markdown</span>
             </button>
 
-            <button 
-              className="btn w-16 flex items-center justify-center sm:w-24" 
-              title="download markdown"
-            >
+            <button className="btn w-16 flex items-center justify-center sm:w-24" title="download markdown">
               <a href={downloadMDFileURL} download="README.md" className="flex flex-col items-center justify-center">
                 <Download />
                 <span className="hidden sm:ml-1 sm:inline sm:text-base">Download markdown</span>
               </a>
             </button>
 
-            <button 
-              className="btn w-16 flex items-center justify-center sm:w-24"
-              title="download backup json"
-            >   
+            <button className="btn w-16 flex items-center justify-center sm:w-24" title="download backup json">
               <a href={downloadJSONFileURL} download="data.json" className="flex flex-col items-center justify-center">
                 <Backup />
                 <span className="hidden sm:ml-1 sm:inline sm:text-base">Download json</span>
               </a>
             </button>
           </>
-        }
+        )}
 
-        <button 
+        <button
           className="btn w-16 flex items-center justify-center sm:w-24"
           onClick={handleChangeIsPreviewMD}
           title="preview"
         >
-          {
-            !isPreviewMD ? 
-              <>
-                <Preview />
-                <span className="hidden sm:ml-1 sm:inline sm:text-base">Preview</span>
-              </>
-            :
-             <>
+          {!isPreviewMD ? (
+            <>
+              <Preview />
+              <span className="hidden sm:ml-1 sm:inline sm:text-base">Preview</span>
+            </>
+          ) : (
+            <>
               <Code />
               <span className="hidden sm:ml-1 sm:inline sm:text-base">Markdown</span>
-             </>
-          }
+            </>
+          )}
         </button>
       </div>
-      {
-        isPreviewMD ? 
-        <PreviewMarkdown data={data} workData={workData} /> : 
+      {isPreviewMD ? (
+        <PreviewMarkdown data={data} workData={workData} />
+      ) : (
         <Markdown data={data} workData={workData} ref={markdownRef} />
-      }
+      )}
     </div>
   )
 }

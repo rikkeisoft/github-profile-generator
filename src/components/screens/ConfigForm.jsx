@@ -3,17 +3,16 @@ import { useRef } from 'react'
 export default function ConfigForm({ onResetForm, onRestoreForm }) {
   const contentInputRef = useRef(null)
 
-  const handleUploadFile = e => {
+  const handleUploadFile = (e) => {
     let file = e.target.files[0]
 
     if (file) {
       const reader = new FileReader()
-      reader.onload = function(event)
-      {
-          // NOTE: event.target point to FileReader
-          let contents = event.target.result
-          contents.split('\n')
-          contentInputRef.current.value = contents
+      reader.onload = function (event) {
+        // NOTE: event.target point to FileReader
+        let contents = event.target.result
+        contents.split('\n')
+        contentInputRef.current.value = contents
       }
 
       reader.readAsText(file)
@@ -32,12 +31,14 @@ export default function ConfigForm({ onResetForm, onRestoreForm }) {
           <h3 className="font-semibold sm:text-2xl">Config options</h3>
           <span className="ml-1 p-1 bg-green-600 text-white text-sm font-medium">new feature</span>
         </div>
-        <button className="btn" onClick={onResetForm}>Reset form</button>
+        <button className="btn" onClick={onResetForm}>
+          Reset form
+        </button>
       </div>
 
       <div className="mb-8 flex justify-items-start">
         <input
-          ref={contentInputRef} 
+          ref={contentInputRef}
           placeholder="Paste JSON code or upload file"
           className="pl-2 w-1/2 border-b border-gray-500 focus:outline-none"
         />
@@ -52,7 +53,9 @@ export default function ConfigForm({ onResetForm, onRestoreForm }) {
         </div>
       </div>
 
-      <button className="mb-10 btn" onClick={handleRestore}>Restore</button>
+      <button className="mb-10 btn" onClick={handleRestore}>
+        Restore
+      </button>
 
       <div className="sm:text-lg">
         <p className="text-green-700 text-lg">Tips</p>

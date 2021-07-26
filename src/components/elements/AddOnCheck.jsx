@@ -10,7 +10,7 @@ export default function AddOnCheck({ content, name, checked, onCheckbox, canModi
 
   const handleModifyComponent = () => setIsOpen(!isOpen)
 
-  const handleChoose = e => {
+  const handleChoose = (e) => {
     const newValue = {
       [e.target.name]: e.target.checked,
     }
@@ -22,39 +22,25 @@ export default function AddOnCheck({ content, name, checked, onCheckbox, canModi
       <div className="my-2 flex items-center">
         <input
           id={name}
-          name={name} 
-          type="checkbox" 
+          name={name}
+          type="checkbox"
           className="mr-3 cursor-pointer"
           checked={checked}
           onChange={handleChoose}
         />
-        <label htmlFor={name} className="cursor-pointer sm:text-xl">{ content }</label>
-        {
-          canModify && 
+        <label htmlFor={name} className="cursor-pointer sm:text-xl">
+          {content}
+        </label>
+        {canModify && (
           <span className="ml-2 cursor-pointer" onClick={handleModifyComponent}>
-            {
-              isOpen ?
-                <Setting />
-              :
-                <Close />
-            }
+            {isOpen ? <Setting /> : <Close />}
           </span>
-          
-        }
+        )}
       </div>
 
-      {
-        isOpen && name === 'visitorsBadge' &&
-        <VisitorsBadge />
-      }
-      {
-        isOpen && (name === 'topSkills' || name === 'githubStatsCard') &&
-        <GithubStats name={name} />
-      }
-      {
-        isOpen && name === 'githubStreakStats' &&
-        <StreakStats />
-      }
+      {isOpen && name === 'visitorsBadge' && <VisitorsBadge />}
+      {isOpen && (name === 'topSkills' || name === 'githubStatsCard') && <GithubStats name={name} />}
+      {isOpen && name === 'githubStreakStats' && <StreakStats />}
     </>
   )
 }

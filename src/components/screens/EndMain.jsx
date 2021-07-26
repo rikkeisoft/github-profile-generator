@@ -1,14 +1,14 @@
 import Error from '@components/elements/Error'
 import { useEffect, useState } from 'react'
-import { 
-  DEVTO_USERNAME_ERROR, 
-  GITHUB_USERNAME_ERROR, 
-  MEDIUM_USERNAME_ERROR, 
-  RSS_URL_ERROR, 
+import {
+  DEVTO_USERNAME_ERROR,
+  GITHUB_USERNAME_ERROR,
+  MEDIUM_USERNAME_ERROR,
+  RSS_URL_ERROR,
   TWITTER_USERNAME_ERROR,
 } from 'src/utils/constants'
 
-const filterData = data => {
+const filterData = (data) => {
   const filterDataSocial = []
 
   for (const item of data) {
@@ -17,7 +17,7 @@ const filterData = data => {
       item.key === 'twitter' ||
       item.key === 'devto' ||
       item.key === 'medium' ||
-      item.key === 'rss' 
+      item.key === 'rss'
     )
       filterDataSocial.push(item)
   }
@@ -27,10 +27,10 @@ const filterData = data => {
 
 export default function EndMain({ dataSocial, dataAddons, onGeneratePart }) {
   const [errors, setErrors] = useState([])
-  const [ 
+  const [
     visitorsBadge,
     githubTrophy,
-    githubStatsCard, 
+    githubStatsCard,
     topSkills,
     githubStreakStats,
     twitterBadge,
@@ -44,7 +44,14 @@ export default function EndMain({ dataSocial, dataAddons, onGeneratePart }) {
   useEffect(() => {
     let testErrors = []
 
-    if ((visitorsBadge.checked || githubTrophy.checked || githubStatsCard.checked || topSkills.checked || githubStreakStats.checked) && !github.value) {
+    if (
+      (visitorsBadge.checked ||
+        githubTrophy.checked ||
+        githubStatsCard.checked ||
+        topSkills.checked ||
+        githubStreakStats.checked) &&
+      !github.value
+    ) {
       testErrors.push(GITHUB_USERNAME_ERROR)
     }
     if (twitterBadge.checked && !twitter.value) {
@@ -66,19 +73,14 @@ export default function EndMain({ dataSocial, dataAddons, onGeneratePart }) {
   return (
     <div className="mb-12">
       <div className="mb-4">
-        {
-          errors.map((error, index) => (
-            <Error key={index} error={error} />
-          ))
-        }
+        {errors.map((error, index) => (
+          <Error key={index} error={error} />
+        ))}
       </div>
       <div className="text-center">
-        <button 
-          className="sm:text-xl btn"
-          onClick={onGeneratePart}
-        >
+        <button className="sm:text-xl btn" onClick={onGeneratePart}>
           Generate README
-          </button>
+        </button>
       </div>
     </div>
   )

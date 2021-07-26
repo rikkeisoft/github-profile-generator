@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { LOCAL_STORAGE_KEY } from 'src/utils/constants'
 
 const initValue = {
-  'styles': 'Flat',
-  'color': '#0e75b6',
-  'labelText': 'Profile views',
+  styles: 'Flat',
+  color: '#0e75b6',
+  labelText: 'Profile views',
 }
 
 export default function VisitorsBadge() {
@@ -16,7 +16,7 @@ export default function VisitorsBadge() {
     setBadge(info.customize.badge)
   }, [])
 
-  const handleOnChangeValue = e => {
+  const handleOnChangeValue = (e) => {
     const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     const newCustomize = {
       ...info,
@@ -29,7 +29,7 @@ export default function VisitorsBadge() {
       },
     }
 
-    setBadge(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    setBadge((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize))
   }
 
@@ -48,7 +48,7 @@ export default function VisitorsBadge() {
 
         <label htmlFor="badge-color" className="sm:text-lg">
           Color:&nbsp;
-          <input 
+          <input
             type="color"
             name="color"
             id="badge-color"
@@ -60,7 +60,7 @@ export default function VisitorsBadge() {
 
         <label htmlFor="badge-text" className="sm:text-lg">
           Label Text:&nbsp;
-          <input 
+          <input
             type="text"
             name="labelText"
             id="badge-text"
@@ -80,7 +80,7 @@ export default function VisitorsBadge() {
               readOnly
               className="w-2/6 px-2 bg-gray-700 rounded-tl-sm rounded-bl-sm text-yellow-50 text-sm"
             />
-            <input 
+            <input
               type="color"
               value={badge.color}
               readOnly

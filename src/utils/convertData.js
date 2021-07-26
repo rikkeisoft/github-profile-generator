@@ -1,11 +1,12 @@
 // for Work part
-export const mapObjToArr = obj => {
-  let result = [];
+export const mapObjToArr = (obj) => {
+  let result = []
 
   for (const prefixKey in obj.prefix) {
     if (obj.prefix.hasOwnProperty) {
-      let newObj = {};
+      let newObj = {}
       for (const key in obj) {
+        // eslint-disable-next-line no-prototype-builtins
         if (obj.hasOwnProperty(key) && obj[key].hasOwnProperty(prefixKey)) {
           newObj = {
             ...newObj,
@@ -14,58 +15,57 @@ export const mapObjToArr = obj => {
           }
         }
       }
-      
+
       result.push(newObj)
     }
   }
 
-  return result;
+  return result
 }
 
 // for Skills part
 export const addCheckedProperty = (dataSkills, skills) => {
-  if (!skills)
-    return;
-  
-  let result = {...dataSkills}
+  if (!skills) return
+
+  let result = { ...dataSkills }
   for (const key in dataSkills) {
+    // eslint-disable-next-line no-prototype-builtins
     if (dataSkills.hasOwnProperty(key)) {
-      const newArr = result[key].map(dataSkill => {
-        const checked = skills[dataSkill.name];
+      const newArr = result[key].map((dataSkill) => {
+        const checked = skills[dataSkill.name]
         return {
           ...dataSkill,
           checked,
         }
-      });
+      })
 
-      result = { ...result, [key]: newArr };
+      result = { ...result, [key]: newArr }
     }
   }
 
-  return result;
+  return result
 }
 
 // for Social, Add-ons part
 export const convertValue = (data, infoData, key) => {
-  if (!infoData)
-    return;
+  if (!infoData) return
 
-  let result = data.map(item => {
+  let result = data.map((item) => {
     return {
       ...item,
       [key]: infoData[item.key],
     }
-  });
+  })
 
-  return result;
+  return result
 }
 
 // generate links
-export const generateLink = key => {
-  switch(key) {
+export const generateLink = (key) => {
+  switch (key) {
     case 'github':
       return 'https://github.com'
-    
+
     case 'twitter':
       return 'https://twitter.com'
 
@@ -80,7 +80,7 @@ export const generateLink = key => {
 
     case 'stackoverflow':
       return 'https://stackoverflow.com/users'
-    
+
     case 'linkedin':
       return 'https://linkedin.com/in'
 
@@ -103,7 +103,7 @@ export const generateLink = key => {
       return 'https://medium.com'
 
     case 'youtube':
-     return 'https://www.youtube.com/c'
+      return 'https://www.youtube.com/c'
 
     case 'codechef':
       return 'https://www.codechef.com/users'

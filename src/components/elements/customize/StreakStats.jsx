@@ -12,7 +12,7 @@ export default function StreakStats() {
     setStats(info.customize.streakStats)
   }, [])
 
-  const handleOnChangeValue = e => {
+  const handleOnChangeValue = (e) => {
     const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     const newCustomize = {
       ...info,
@@ -24,7 +24,7 @@ export default function StreakStats() {
       },
     }
 
-    setStats(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    setStats((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize))
   }
   return (

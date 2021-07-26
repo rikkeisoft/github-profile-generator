@@ -1,7 +1,7 @@
-import { LOCAL_STORAGE_KEY } from "./constants";
+import { LOCAL_STORAGE_KEY } from './constants'
 
 export const getLocalstorageToFile = () => {
-  const textToSave = localStorage.getItem(LOCAL_STORAGE_KEY);
+  const textToSave = localStorage.getItem(LOCAL_STORAGE_KEY)
   const textToSaveAsBlob = new Blob([textToSave], {
     type: 'application/json',
   })
@@ -9,7 +9,7 @@ export const getLocalstorageToFile = () => {
   return window.URL.createObjectURL(textToSaveAsBlob)
 }
 
-export const saveREADMEFile = ref => {
+export const saveREADMEFile = (ref) => {
   let markdownContent
   if (ref && ref.current) {
     markdownContent = ref.current.textContent

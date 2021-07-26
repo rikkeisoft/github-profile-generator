@@ -1,8 +1,7 @@
 import Input from '@components/elements/Input'
 
 export default function Support({ data, onChangeInfo }) {
-
-  const handleOnChangeInput = newValue => {
+  const handleOnChangeInput = (newValue) => {
     const newSupport = {
       key: 'support',
       value: newValue,

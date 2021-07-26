@@ -1,10 +1,10 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es6': true,
-    'node': true,
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
   },
-  'extends': [
+  extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:import/errors',
@@ -15,26 +15,21 @@ module.exports = {
     'prettier',
     'plugin:prettier/recommended',
   ],
-  'parser': 'babel-eslint',
-  'parserOptions': {
-    'ecmaVersion': 2018,
-    'sourceType': 'module',
-    'ecmaFeatures': {
-      'jsx': true
-    }
-  },
-  'settings': {
-    'react': {
-      'version': 'detect',
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
     },
   },
-  'plugins': [
-    'eslint-plugin-import',
-    'eslint-plugin-react',
-    'eslint-plugin-jsdoc',
-    'eslint-plugin-prefer-arrow',
-  ],
-  'rules': {
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  plugins: ['eslint-plugin-import', 'eslint-plugin-react', 'eslint-plugin-jsdoc', 'eslint-plugin-prefer-arrow'],
+  rules: {
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 0,
     'comma-dangle': ['error', 'always-multiline'],
@@ -45,7 +40,7 @@ module.exports = {
     'no-duplicate-imports': 'off',
     'react/display-name': 0,
     'prettier/prettier': 0,
-    'camelcase': 0,
+    camelcase: 0,
     'max-len': [
       1,
       {
@@ -63,20 +58,21 @@ module.exports = {
     'import/no-unresolved': ['warn'],
     'jsx-a11y/no-static-element-interactions': ['warn'],
     'jsx-a11y/anchor-is-valid': ['warn'],
-    'semi': ['error', 'never'],
-    'no-multiple-empty-lines': ['error',
+    semi: ['error', 'never'],
+    'no-multiple-empty-lines': [
+      'error',
       {
-        'max': 1,
-        'maxEOF': 0,
-        'maxBOF': 0,
+        max: 1,
+        maxEOF: 0,
+        maxBOF: 0,
       },
     ],
-    'quotes': [
+    quotes: [
       'error',
       'single',
       {
-        'avoidEscape': true,
-        'allowTemplateLiterals': true,
+        avoidEscape: true,
+        allowTemplateLiterals: true,
       },
     ],
   },

@@ -6,14 +6,16 @@ export default function Header() {
         alt="Logo"
         className="w-12 h-12 cursor-pointer"
       />
-      <span className="leading-5 text-sm font-medium text-blue-900 cursor-pointer sm:text-2xl">GitHub Profile README Generator</span>
+      <span className="leading-5 text-sm font-medium text-blue-900 cursor-pointer sm:text-2xl">
+        GitHub Profile README Generator
+      </span>
       <div className="flex my-1">
         <button className="sm:text-sm btn">
-          Star this repo 
+          Star this repo
           <span className="ml-1 text-purple-600">6169</span>
         </button>
         <button className="ml-4 sm:text-sm btn">
-          Fork on Github 
+          Fork on Github
           <span className="ml-1 text-purple-600">1063</span>
         </button>
       </div>

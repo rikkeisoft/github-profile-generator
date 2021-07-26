@@ -8,7 +8,7 @@ export default function Input(props) {
     defaultValue && setText(defaultValue)
   }, [defaultValue])
 
-  const handleOnChangeInput = e => {
+  const handleOnChangeInput = (e) => {
     setText(() => e.target.value)
     const newValue = {
       [e.target.name]: e.target.value,
@@ -18,12 +18,10 @@ export default function Input(props) {
 
   return (
     <input
-      className={
-        `pl-2 pb-0.5 w-full 
+      className={`pl-2 pb-0.5 w-full 
         border-b border-gray-400 
         text-sm focus:outline-none focus:border-blue-700 
-        sm:first:ml-0 sm:ml-6 sm:text-lg` 
-      }
+        sm:first:ml-0 sm:ml-6 sm:text-lg`}
       name={name}
       type="text"
       value={text}

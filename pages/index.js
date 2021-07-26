@@ -18,12 +18,10 @@ export default function Home() {
     if (!localInfo) {
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initState))
       setInfo(initState)
-    } 
-    else
-      setInfo(localInfo)
+    } else setInfo(localInfo)
   }, [])
 
-  const handleOnChangeInfo = newValue => {
+  const handleOnChangeInfo = (newValue) => {
     const { key, value } = newValue
     const newInfo = {
       ...info,
@@ -32,7 +30,7 @@ export default function Home() {
         ...value,
       },
     }
-    
+
     setInfo(newInfo)
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newInfo))
   }
@@ -42,7 +40,7 @@ export default function Home() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initState))
   }
 
-  const handleOnRestoreForm = newLocalStorageItem => {
+  const handleOnRestoreForm = (newLocalStorageItem) => {
     setInfo(JSON.parse(newLocalStorageItem))
     localStorage.setItem(LOCAL_STORAGE_KEY, newLocalStorageItem)
   }
@@ -58,24 +56,20 @@ export default function Home() {
   return (
     <div className="z-0">
       <Header />
-      {
-        loading && <Loading />
-      }
-      {
-        !loading ? (isGeneratePage ? 
-        <GenerateRM 
-          data={info}
-          onGeneratePart={handleGeneratePart}
-        /> :
-        <Main 
-          info={info}
-          onChangeMainInfo={handleOnChangeInfo}
-          onResetMainForm={handleOnResetForm}
-          onRestoreMainForm={handleOnRestoreForm}
-          onGeneratePart={handleGeneratePart}
-        />
-        ) : null
-      }
+      {loading && <Loading />}
+      {!loading ? (
+        isGeneratePage ? (
+          <GenerateRM data={info} onGeneratePart={handleGeneratePart} />
+        ) : (
+          <Main
+            info={info}
+            onChangeMainInfo={handleOnChangeInfo}
+            onResetMainForm={handleOnResetForm}
+            onRestoreMainForm={handleOnRestoreForm}
+            onGeneratePart={handleGeneratePart}
+          />
+        )
+      ) : null}
       <Footer />
       <Coffee />
     </div>

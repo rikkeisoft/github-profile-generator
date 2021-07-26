@@ -4,25 +4,24 @@ import React from 'react'
 import { skillWebsites } from 'src/utils/constants'
 import { generateLink } from 'src/utils/convertData'
 
-const findImgSrc = name => {
+const findImgSrc = (name) => {
   for (const key in skillJSON) {
     if (Object.prototype.hasOwnProperty.call(skillJSON, key)) {
-      const foundItem = skillJSON[key].find(skill => skill.name === name)
+      const foundItem = skillJSON[key].find((skill) => skill.name === name)
 
-      if (foundItem !== undefined)
-        return foundItem.src
+      if (foundItem !== undefined) return foundItem.src
     }
   }
 
   return null
 }
 
-const fillValueSocial = socialLocal => {
+const fillValueSocial = (socialLocal) => {
   let result = [...socialJSON]
   for (const key in socialLocal) {
     if (Object.prototype.hasOwnProperty.call(socialLocal, key)) {
       if (socialLocal[key]) {
-        let item = result.find(rs => rs.key === key)
+        let item = result.find((rs) => rs.key === key)
         item.value = socialLocal[key]
       }
     }
@@ -34,7 +33,7 @@ const fillValueSocial = socialLocal => {
 const MiniTitle = ({ title }) => {
   return (
     <>
-      {`<h3 align="center">${ title }</h3>`}
+      {`<h3 align="center">${title}</h3>`}
       <br />
     </>
   )
@@ -131,7 +130,7 @@ const Work = ({ prefix, project, link, data }) => {
   return null
 }
 
-const isSocial = social => {
+const isSocial = (social) => {
   return (
     social.behance ||
     social.codechef ||
@@ -155,16 +154,16 @@ const isSocial = social => {
     social.stackoverflow ||
     social.topcoder ||
     social.twitter ||
-    social.youtube 
+    social.youtube
   )
 }
 
 const Social = ({ diffKey, username, imgSrc }) => {
-  if(username) {
+  if (username) {
     const url = generateLink(diffKey)
     return (
       <>
-      {`<a href="${url}/${username}" target="_blank">
+        {`<a href="${url}/${username}" target="_blank">
         <img 
           align="center"
           src="${imgSrc}"
@@ -198,20 +197,22 @@ const LanguageAndTool = ({ skills }) => {
               align="center"
             />
           </a>
-          `, 
+          `,
         )
       }
     }
   }
-  return listSkills.length > 0 && (
-    <>
-      <MiniTitle title="Languages and Tools" />
-      {`<p align="left">${listSkills.join(' ')}</p>`}
-      <br />
-      <br />
-    </>
+  return (
+    listSkills.length > 0 && (
+      <>
+        <MiniTitle title="Languages and Tools" />
+        {`<p align="left">${listSkills.join(' ')}</p>`}
+        <br />
+        <br />
+      </>
+    )
   )
-} 
+}
 
 const Markdown = React.forwardRef(({ data, workData }, ref) => {
   const isTwitterBadge = data.add_ons.twitterBadge
@@ -221,56 +222,39 @@ const Markdown = React.forwardRef(({ data, workData }, ref) => {
 
   return (
     <>
-      {
-      data && (
-        <div 
-          ref={ref} 
-          className="w-full px-4 py-3 border-2 border-black bg-gray-100 break-words shadow-2xl"
-        >
+      {data && (
+        <div ref={ref} className="w-full px-4 py-3 border-2 border-black bg-gray-100 break-words shadow-2xl">
           <Title prefix={data.title.prefix} name={data.title.name} />
 
           <Subtitle sub={data.subtitle.sub} />
 
-          { isGithubTrophy && <GithubTrophy username={githubUsername} /> }
-          { isTwitterBadge && <TwitterBadge username={twitterUsername} /> }
+          {isGithubTrophy && <GithubTrophy username={githubUsername} />}
+          {isTwitterBadge && <TwitterBadge username={twitterUsername} />}
 
-          {
-            workData.map(item => (
-              <Work
-                key={item.diffKey} 
-                prefix={item.prefix} 
-                project={item.projectName}
-                link={item.link}
-                data={item.data} 
-              />
-            ))
-          }
+          {workData.map((item) => (
+            <Work
+              key={item.diffKey}
+              prefix={item.prefix}
+              project={item.projectName}
+              link={item.link}
+              data={item.data}
+            />
+          ))}
 
-          { isSocial(data.social) && <MiniTitle title="Connect with me:" /> }
-          {
-            fillValueSocial(data.social).map(item => (
-              <Social
-                key={item.key}
-                diffKey={item.key}
-                username={item.value}
-                imgSrc={item.imgSrc}
-              />
-            ))
-          }
-          {
-            isSocial(data.social) && 
-              <>
-                <br />
-                <br />
-              </>
-          }
+          {isSocial(data.social) && <MiniTitle title="Connect with me:" />}
+          {fillValueSocial(data.social).map((item) => (
+            <Social key={item.key} diffKey={item.key} username={item.value} imgSrc={item.imgSrc} />
+          ))}
+          {isSocial(data.social) && (
+            <>
+              <br />
+              <br />
+            </>
+          )}
 
-          <LanguageAndTool 
-            skills={data.skills}
-          />
+          <LanguageAndTool skills={data.skills} />
         </div>
-      )
-    }
+      )}
     </>
   )
 })

@@ -31,11 +31,7 @@ export default function Footer() {
         </div>
         <div className="mb-2 order-3 sm:mb-0 sm:order-4">
           <h4 className="mb-3 text-lg font-medium sm:mb-0 sm:text-base">Join Community</h4>
-          <img
-            src={DISCORD_IMG_URL}
-            alt="discord"
-            className="w-24 h-12"
-          />
+          <img src={DISCORD_IMG_URL} alt="discord" className="w-24 h-12" />
         </div>
       </div>
       <p className="text-center">Clone in Vietnam</p>

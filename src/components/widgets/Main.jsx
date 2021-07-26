@@ -27,43 +27,15 @@ export default function Main({ info, onChangeMainInfo, onResetMainForm, onRestor
 
   return (
     <main className="px-5 py-8 sm:px-12 sm:py-12">
-      <Title 
-        data={info?.title}
-        onChangeInfo={onChangeMainInfo} 
-      />
-      <Subtitle
-        data={info?.subtitle}
-        onChangeInfo={onChangeMainInfo}
-      />
-      <Work 
-        data={workArr}
-        onChangeInfo={onChangeMainInfo}
-      />
-      <Skills
-        data={skills} 
-        onChangeInfo={onChangeMainInfo}
-      />
-      <Social
-        data={social} 
-        onChangeInfo={onChangeMainInfo}
-      />
-      <AddOn 
-        data={addon} 
-        onChangeInfo={onChangeMainInfo}
-      />
-      <Support
-        data={info?.support}
-        onChangeInfo={onChangeMainInfo}
-      />
-      <EndMain
-        dataSocial={social}
-        dataAddons={addon}
-        onGeneratePart={onGeneratePart}
-      />
-      <ConfigForm 
-        onResetForm={onResetMainForm}
-        onRestoreForm={onRestoreMainForm}
-      />
+      <Title data={info?.title} onChangeInfo={onChangeMainInfo} />
+      <Subtitle data={info?.subtitle} onChangeInfo={onChangeMainInfo} />
+      <Work data={workArr} onChangeInfo={onChangeMainInfo} />
+      <Skills data={skills} onChangeInfo={onChangeMainInfo} />
+      <Social data={social} onChangeInfo={onChangeMainInfo} />
+      <AddOn data={addon} onChangeInfo={onChangeMainInfo} />
+      <Support data={info?.support} onChangeInfo={onChangeMainInfo} />
+      <EndMain dataSocial={social} dataAddons={addon} onGeneratePart={onGeneratePart} />
+      <ConfigForm onResetForm={onResetMainForm} onRestoreForm={onRestoreMainForm} />
     </main>
   )
 }
