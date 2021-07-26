@@ -1,13 +1,13 @@
-import Input from "../elements/Input";
+import Input from '../elements/Input'
 
 export default function Title({ data, onChangeInfo }) {
   const handleOnChangeInput = newValue => {
     const newTitle = {
-      key: "title",
+      key: 'title',
       value: newValue,
     }
 
-    onChangeInfo(newTitle);
+    onChangeInfo(newTitle)
   }
 
   return (

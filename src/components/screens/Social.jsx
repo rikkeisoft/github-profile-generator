@@ -3,11 +3,11 @@ import SocialInput from '@components/elements/SocialInput'
 export default function Social({ data, onChangeInfo }) {
   const handleOnChangeSocialInput = newValue => {
     const newSocialInput = {
-      key: "social",
+      key: 'social',
       value: newValue,
     }
 
-    onChangeInfo(newSocialInput);
+    onChangeInfo(newSocialInput)
   }
   
   return (

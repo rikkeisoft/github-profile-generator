@@ -1,29 +1,29 @@
-import { useEffect, useState } from "react"
-import { LOCAL_STORAGE_KEY } from "src/utils/constants";
+import { useEffect, useState } from 'react'
+import { LOCAL_STORAGE_KEY } from 'src/utils/constants'
 
 const initValue = {
-  theme: "none",
-  titleColor: "#000000",
-  textColor: "#000000",
-  bgColor: "#000000",
+  theme: 'none',
+  titleColor: '#000000',
+  textColor: '#000000',
+  bgColor: '#000000',
   hideBorder: false,
-  cacheSeconds: "1800",
-  locale: "en"
+  cacheSeconds: '1800',
+  locale: 'en',
 }
 
 export default function GithubStats({ name }) {
-  const [stats, setStats] = useState(initValue);
+  const [stats, setStats] = useState(initValue)
 
   useEffect(() => {
-    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
 
-    setStats(info.customize[name]);
-  }, []);
+    setStats(info.customize[name])
+  }, [])
 
   const handleOnChangeValue = e => {
-    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    let newStats;
-    if (e.target.name === "hideBorder") 
+    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    let newStats
+    if (e.target.name === 'hideBorder') 
       newStats = {
         ...stats,
         hideBorder: e.target.checked,
@@ -41,22 +41,22 @@ export default function GithubStats({ name }) {
       },
     }
 
-    setStats(newStats);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize));
+    setStats(newStats)
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize))
   }
 
   return (
     <div className="ml-6 p-2 w-3/4 border-2 border-black bg-blue-50">
       <p className="text-lg border-b border-gray-500">
-        { name === "githubStatsCard" ?
-            "Customize Github Stats Card" :
-            "Customize Top Skills Card"
+        { name === 'githubStatsCard' ?
+            'Customize Github Stats Card' :
+            'Customize Top Skills Card'
         }
       </p>
       <div className="mt-2 flex flex-col justify-center sm:text-lg">
         <label htmlFor="card-theme">
           Theme:&nbsp;
-          <select id="card-theme" name="theme" value={stats?.theme} onChange={handleOnChangeValue}>
+          <select id="card-theme" name="theme" value={stats?.theme} onBlur={handleOnChangeValue}>
             <option value="none">none</option>
             <option value="Dark">Dark</option>
             <option value="Radical">Radical</option>

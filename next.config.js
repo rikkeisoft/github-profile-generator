@@ -22,4 +22,7 @@ module.exports = {
       "cdn.buymeacoffee.com",
     ],
   },
+  extends: [
+    'plugin:@next/next/recommended',
+  ],
 }

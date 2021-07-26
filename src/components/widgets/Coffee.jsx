@@ -1,39 +1,38 @@
-import Comment from "@components/elements/Comment";
-import { useState } from "react"
+import Comment from '@components/elements/Comment'
+import { useState } from 'react'
 
 const comments = [
   {
-    avatarImg: "https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg",
-    title: "Hihi bought you a coffee.",
-    content: "This looks ace and really helps me to stand out - cheers!",
+    avatarImg: 'https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg',
+    title: 'Hihi bought you a coffee.',
+    content: 'This looks ace and really helps me to stand out - cheers!',
   },
   {
-    avatarImg: "https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg",
-    title: "Sabo bought you 10 coffees.",
-    content: "I love the readme generator 😻",
+    avatarImg: 'https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg',
+    title: 'Sabo bought you 10 coffees.',
+    content: 'I love the readme generator 😻',
   },
   {
-    avatarImg: "https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg",
-    title: "Tage bought you 2 coffees.",
-    content: "This looks ace and really helps me to stand out - cheers!",
+    avatarImg: 'https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg',
+    title: 'Tage bought you 2 coffees.',
+    content: 'This looks ace and really helps me to stand out - cheers!',
   },
   {
-    avatarImg: "https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg",
-    title: "Ace bought you a coffee.",
-    content: "This GitHub readme generator was a killer time saver. Thank you X3!",
+    avatarImg: 'https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg',
+    title: 'Ace bought you a coffee.',
+    content: 'This GitHub readme generator was a killer time saver. Thank you X3!',
   },
   {
-    avatarImg: "https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg",
-    title: "Zoro bought you 5 coffees.",
-    content: "Thank you!",
+    avatarImg: 'https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg',
+    title: 'Zoro bought you 5 coffees.',
+    content: 'Thank you!',
   },
 ]
 
 export default function Coffee() {
-  const [isOpenTab, setIsOpenTab] = useState(false);
-  const activeClass = isOpenTab ? 'visible' : 'invisible';
+  const [isOpenTab, setIsOpenTab] = useState(false)
 
-  const handleOpenTab = () => setIsOpenTab(!isOpenTab);
+  const handleOpenTab = () => setIsOpenTab(!isOpenTab)
 
   return (
     <div>
@@ -66,7 +65,7 @@ export default function Coffee() {
           <h1 className="mb-4 text-2xl">Buy me a coffee</h1>
 
           <div className="p-3 rounded-md flex justify-items-center items-center border-2 border-red-300 bg-red-100 mb-4">
-            <div className="text-3xl">☕</div>
+            <span role="img" aria-label="coffee" className="text-3xl">☕</span>
             <span className="ml-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

@@ -1,4 +1,4 @@
-import Input from "./Input";
+import Input from './Input'
 
 export default function SocialInput({ name, imgSrc, placeholder, value, onChangeSocialInput }) {
   const handleOnChageInput = newValue => {

@@ -1,31 +1,32 @@
-import Error from "@components/elements/Error";
-import { useEffect, useState } from "react";
+import Error from '@components/elements/Error'
+import { useEffect, useState } from 'react'
 import { 
   DEVTO_USERNAME_ERROR, 
   GITHUB_USERNAME_ERROR, 
   MEDIUM_USERNAME_ERROR, 
   RSS_URL_ERROR, 
-  TWITTER_USERNAME_ERROR 
-} from "src/utils/constants";
+  TWITTER_USERNAME_ERROR,
+} from 'src/utils/constants'
 
 const filterData = data => {
-  const filterDataSocial = [];
+  const filterDataSocial = []
+
   for (const item of data) {
     if (
-      item.key === "github" ||
-      item.key === "twitter" ||
-      item.key === "devto" ||
-      item.key === "medium" ||
-      item.key === "rss" 
+      item.key === 'github' ||
+      item.key === 'twitter' ||
+      item.key === 'devto' ||
+      item.key === 'medium' ||
+      item.key === 'rss' 
     )
-      filterDataSocial.push(item);
+      filterDataSocial.push(item)
   }
 
-  return filterDataSocial;
+  return filterDataSocial
 }
 
-export default function EndMain({ dataSocial, dataAddons }) {
-  const [errors, setErrors] = useState([]);
+export default function EndMain({ dataSocial, dataAddons, onGeneratePart }) {
+  const [errors, setErrors] = useState([])
   const [ 
     visitorsBadge,
     githubTrophy,
@@ -36,30 +37,31 @@ export default function EndMain({ dataSocial, dataAddons }) {
     devDynamicBlog,
     mediumDynamicBlog,
     personalDynamicBlog,
-  ] = dataAddons;
-  const filterDataSocial = filterData(dataSocial);
-  const [github, twitter, devto, medium, rss] = filterDataSocial;
+  ] = dataAddons
+  const filterDataSocial = filterData(dataSocial)
+  const [github, twitter, devto, medium, rss] = filterDataSocial
 
   useEffect(() => {
-    let testErrors = [];
+    let testErrors = []
+
     if ((visitorsBadge.checked || githubTrophy.checked || githubStatsCard.checked || topSkills.checked || githubStreakStats.checked) && !github.value) {
-      testErrors.push(GITHUB_USERNAME_ERROR);
+      testErrors.push(GITHUB_USERNAME_ERROR)
     }
     if (twitterBadge.checked && !twitter.value) {
-      testErrors.push(TWITTER_USERNAME_ERROR);
+      testErrors.push(TWITTER_USERNAME_ERROR)
     }
     if (devDynamicBlog.checked && !devto.value) {
-      testErrors.push(DEVTO_USERNAME_ERROR);
+      testErrors.push(DEVTO_USERNAME_ERROR)
     }
     if (mediumDynamicBlog.checked && !medium.value) {
-      testErrors.push(MEDIUM_USERNAME_ERROR);
+      testErrors.push(MEDIUM_USERNAME_ERROR)
     }
     if (personalDynamicBlog.checked && !rss.value) {
-      testErrors.push(RSS_URL_ERROR);
+      testErrors.push(RSS_URL_ERROR)
     }
 
-    setErrors(testErrors);
-  }, [dataSocial, dataAddons]);
+    setErrors(testErrors)
+  }, [dataSocial, dataAddons])
 
   return (
     <div className="mb-12">
@@ -71,7 +73,12 @@ export default function EndMain({ dataSocial, dataAddons }) {
         }
       </div>
       <div className="text-center">
-        <button className="sm:text-xl btn">Generate README</button>
+        <button 
+          className="sm:text-xl btn"
+          onClick={onGeneratePart}
+        >
+          Generate README
+          </button>
       </div>
     </div>
   )

@@ -1,13 +1,13 @@
-import Input from "@components/elements/Input";
+import Input from '@components/elements/Input'
 
 export default function Subtitle({ data, onChangeInfo }) {
   const handleOnChangeInput = newValue => {
     const newSubtitle = {
-      key: "subtitle",
+      key: 'subtitle',
       value: newValue,
     }
 
-    onChangeInfo(newSubtitle);
+    onChangeInfo(newSubtitle)
   }
 
   return (
