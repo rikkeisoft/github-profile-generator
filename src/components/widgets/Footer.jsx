@@ -1,4 +1,4 @@
-import { DISCORD_IMG_URL } from "src/utils/constants";
+import { DISCORD_IMG_URL } from 'src/utils/constants'
 
 export default function Footer() {
   return (

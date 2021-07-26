@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react"
-import { LOCAL_STORAGE_KEY } from "src/utils/constants";
+import { useEffect, useState } from 'react'
+import { LOCAL_STORAGE_KEY } from 'src/utils/constants'
 
 const initValue = {
-  "styles": "Flat",
-  "color": "#0e75b6",
-  "labelText": "Profile views"
+  'styles': 'Flat',
+  'color': '#0e75b6',
+  'labelText': 'Profile views',
 }
 
 export default function VisitorsBadge() {
-  const [badge, setBadge] = useState(initValue);
+  const [badge, setBadge] = useState(initValue)
 
   useEffect(() => {
-    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
 
-    setBadge(info.customize.badge);
-  }, []);
+    setBadge(info.customize.badge)
+  }, [])
 
   const handleOnChangeValue = e => {
-    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     const newCustomize = {
       ...info,
       customize: {
@@ -28,8 +28,9 @@ export default function VisitorsBadge() {
         },
       },
     }
-    setBadge(prev => ({ ...prev, [e.target.name]: e.target.value}));
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize));
+
+    setBadge(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize))
   }
 
   return (
@@ -38,7 +39,7 @@ export default function VisitorsBadge() {
       <div className="mt-2 flex flex-col justify-center">
         <label htmlFor="badge-style" className="sm:text-lg">
           Style:&nbsp;
-          <select id="badge-style" name="styles" value={badge?.styles} onChange={handleOnChangeValue}>
+          <select id="badge-style" name="styles" value={badge?.styles} onBlur={handleOnChangeValue}>
             <option value="Flat">Flat</option>
             <option value="Flat-Square">Flat Square</option>
             <option value="Plastic">Plastic</option>
@@ -84,7 +85,6 @@ export default function VisitorsBadge() {
               value={badge.color}
               readOnly
               className="relative w-6 h-6 sm:text-sm before:content-['0'] before:absolute before:right-2 before:top-0.5 before:text-white"
-              // className="w-4 pl-1 text-sm text-white bg-blue-400 rounded-tr-sm rounded-br-sm before:content-['0'] before:block"
             />
           </span>
         </label>

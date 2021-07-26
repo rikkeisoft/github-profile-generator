@@ -1,26 +1,29 @@
-import { useRef } from "react";
+import { useRef } from 'react'
 
-export default function ConfigForm({ onResetForm }) {
-  const contentInputRef = useRef(null);
+export default function ConfigForm({ onResetForm, onRestoreForm }) {
+  const contentInputRef = useRef(null)
 
   const handleUploadFile = e => {
-    let file = e.target.files[0];
+    let file = e.target.files[0]
 
     if (file) {
-      const reader = new FileReader();
+      const reader = new FileReader()
       reader.onload = function(event)
       {
           // NOTE: event.target point to FileReader
-          let contents = event.target.result;
-          contents.split('\n');
-          contentInputRef.current.value = contents;
-      };
+          let contents = event.target.result
+          contents.split('\n')
+          contentInputRef.current.value = contents
+      }
 
-      reader.readAsText(file);
+      reader.readAsText(file)
     }
   }
 
-  const handleRestore = () => contentInputRef.current.value = "";
+  const handleRestore = () => {
+    onRestoreForm(contentInputRef.current.value)
+    contentInputRef.current.value = ''
+  }
 
   return (
     <div className="px-4 py-3 border-2 border-blue-500">

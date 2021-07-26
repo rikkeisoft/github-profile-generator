@@ -3,7 +3,7 @@ export default function Checkbox({ imgSrc, skillName, check, onCheckbox }) {
     const newValue = {
       [e.target.name]: e.target.checked,
     }
-    onCheckbox(newValue);
+    onCheckbox(newValue)
   }
 
   return (

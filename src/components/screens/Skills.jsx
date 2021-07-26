@@ -1,5 +1,5 @@
-import Input from '@components/elements/Input';
-import Checkbox from '@components/elements/Checkbox';
+import Input from '@components/elements/Input'
+import Checkbox from '@components/elements/Checkbox'
 
 const renderData = (defaultValue, data, handleOnCheckbox) => {
   return (
@@ -32,7 +32,7 @@ export default function Skills({ data, onChangeInfo }) {
       value: newValue,
     }
 
-    onChangeInfo(checkSkill);
+    onChangeInfo(checkSkill)
   }
 
   return (
@@ -52,22 +52,22 @@ export default function Skills({ data, onChangeInfo }) {
           </span>
         </div>
       </div>
-      { renderData("Programming Languages", data?.proLang, handleOnCheckbox) }
-      { renderData("Frontend Development", data?.frontendDev, handleOnCheckbox) }
-      { renderData("Backend Development", data?.backendDev, handleOnCheckbox) }
-      { renderData("Mobile App Development", data?.mobileDev, handleOnCheckbox) }
-      { renderData("AI/ML", data?.ai_ml, handleOnCheckbox) }
-      { renderData("Database", data?.database, handleOnCheckbox) }
-      { renderData("Data Visualization", data?.dataVisual, handleOnCheckbox) }
-      { renderData("Devops", data?.devops, handleOnCheckbox) }
-      { renderData("Backend as a Service(BaaS)", data?.baas, handleOnCheckbox) }
-      { renderData("Framework", data?.framework, handleOnCheckbox) }
-      { renderData("Testing", data?.testing, handleOnCheckbox) }
-      { renderData("Software", data?.software, handleOnCheckbox) }
-      { renderData("Static Site Generators", data?.staticGen, handleOnCheckbox) }
-      { renderData("Game Engines", data?.gameEngine, handleOnCheckbox) }
-      { renderData("Automation", data?.automation, handleOnCheckbox) }
-      { renderData("Other", data?.other, handleOnCheckbox) }
+      { renderData('Programming Languages', data?.proLang, handleOnCheckbox) }
+      { renderData('Frontend Development', data?.frontendDev, handleOnCheckbox) }
+      { renderData('Backend Development', data?.backendDev, handleOnCheckbox) }
+      { renderData('Mobile App Development', data?.mobileDev, handleOnCheckbox) }
+      { renderData('AI/ML', data?.ai_ml, handleOnCheckbox) }
+      { renderData('Database', data?.database, handleOnCheckbox) }
+      { renderData('Data Visualization', data?.dataVisual, handleOnCheckbox) }
+      { renderData('Devops', data?.devops, handleOnCheckbox) }
+      { renderData('Backend as a Service(BaaS)', data?.baas, handleOnCheckbox) }
+      { renderData('Framework', data?.framework, handleOnCheckbox) }
+      { renderData('Testing', data?.testing, handleOnCheckbox) }
+      { renderData('Software', data?.software, handleOnCheckbox) }
+      { renderData('Static Site Generators', data?.staticGen, handleOnCheckbox) }
+      { renderData('Game Engines', data?.gameEngine, handleOnCheckbox) }
+      { renderData('Automation', data?.automation, handleOnCheckbox) }
+      { renderData('Other', data?.other, handleOnCheckbox) }
     </div>
   )
 }

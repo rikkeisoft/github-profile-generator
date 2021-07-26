@@ -1,13 +1,13 @@
-import AddOnCheck from "@components/elements/AddOnCheck";
+import AddOnCheck from '@components/elements/AddOnCheck'
 
 export default function AddOn({ data, onChangeInfo }) {
   const handleOnCheckbox = newValue => {
     const checkbox = {
-      key: "add_ons",
+      key: 'add_ons',
       value: newValue,
     }
     
-    onChangeInfo(checkbox);
+    onChangeInfo(checkbox)
   }
 
   return (

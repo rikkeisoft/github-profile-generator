@@ -1,14 +1,14 @@
-import Input from "@components/elements/Input";
+import Input from '@components/elements/Input'
 
 export default function Work({ data, onChangeInfo }) {
   const handleOnChangeInput = (newValue, key) => {
-    // expected: { prefix: "prefix", value: { currentWork: "abcxyz" } }
+    // expected: { prefix: 'prefix', value: { currentWork: 'abcxyz' } }
     const newWork = {
       key,
       value: newValue,
     }
 
-    onChangeInfo(newWork);
+    onChangeInfo(newWork)
   }
 
   return (
@@ -21,19 +21,19 @@ export default function Work({ data, onChangeInfo }) {
               <Input
                 name={obj.diffKey} 
                 defaultValue={obj.prefix}
-                onChangeInput={value => handleOnChangeInput(value, "prefix")}
+                onChangeInput={value => handleOnChangeInput(value, 'prefix')}
               />
               <Input
                 name={obj.diffKey}
                 placeholder="project name"
                 defaultValue={obj.projectName}
-                onChangeInput={value => handleOnChangeInput(value, "projectName")}
+                onChangeInput={value => handleOnChangeInput(value, 'projectName')}
               />
               <Input
                 name={obj.diffKey}
                 placeholder="project link"
                 defaultValue={obj.link}
-                onChangeInput={value => handleOnChangeInput(value, "link")}
+                onChangeInput={value => handleOnChangeInput(value, 'link')}
               />
             </div>
           ))
@@ -45,13 +45,13 @@ export default function Work({ data, onChangeInfo }) {
               <Input
                 name={obj.diffKey} 
                 defaultValue={obj.prefix}
-                onChangeInput={value => handleOnChangeInput(value, "prefix")}
+                onChangeInput={value => handleOnChangeInput(value, 'prefix')}
               />
               <Input
                 name={obj.diffKey}
                 defaultValue={obj.data}
                 placeholder={obj.placeholder}
-                onChangeInput={value => handleOnChangeInput(value, "data")}
+                onChangeInput={value => handleOnChangeInput(value, 'data')}
               />
           </div>
           ))

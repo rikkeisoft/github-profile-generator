@@ -1,23 +1,18 @@
-import Skills from "@components/screens/Skills";
-import { useEffect, useState } from "react";
-import Subtitle from "../screens/Subtitle";
-import Title from "../screens/Title";
-import Work from "../screens/Work";
-import Social from "@components/screens/Social";
-import AddOn from "@components/screens/AddOn";
-
-import initState from "public/json/initData.json"
-import dataSkills from 'public/json/skills.json';
-import socialData from 'public/json/social.json'
+import AddOn from '@components/screens/AddOn'
+import ConfigForm from '@components/screens/ConfigForm'
+import EndMain from '@components/screens/EndMain'
+import Skills from '@components/screens/Skills'
+import Social from '@components/screens/Social'
+import Support from '@components/screens/Support'
 import addonData from 'public/json/add-ons.json'
-import { addCheckedProperty, convertValue, mapObjToArr } from "src/utils/convertData";
-import Support from "@components/screens/Support";
-import { LOCAL_STORAGE_KEY } from "src/utils/constants";
-import EndMain from "@components/screens/EndMain";
-import ConfigForm from "@components/screens/ConfigForm";
+import dataSkills from 'public/json/skills.json'
+import socialData from 'public/json/social.json'
+import { addCheckedProperty, convertValue, mapObjToArr } from 'src/utils/convertData'
+import Subtitle from '../screens/Subtitle'
+import Title from '../screens/Title'
+import Work from '../screens/Work'
 
-export default function Main() {
-  const [info, setInfo] = useState(initState);
+export default function Main({ info, onChangeMainInfo, onResetMainForm, onRestoreMainForm, onGeneratePart }) {
   const workObj = {
     prefix: info?.prefix,
     projectName: info?.projectName,
@@ -25,76 +20,49 @@ export default function Main() {
     data: info?.data,
     placeholder: info?.placeholder,
   }
-  const workArr = mapObjToArr(workObj);
-  const skills = addCheckedProperty(dataSkills, info?.skills);
-  const social = convertValue(socialData, info?.social, "value");
-  const addon = convertValue(addonData, info?.add_ons, "checked");
-
-  useEffect(() => {
-    const localInfo = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (!localInfo) {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initState));
-      setInfo(initState);
-    } 
-    else
-      setInfo(localInfo);
-  }, []);
-
-  const handleOnChangeInfo = newValue => {
-    const { key, value } = newValue;
-    const newInfo = {
-      ...info,
-      [key]: {
-        ...info[key],
-        ...value,
-      },
-    };
-    
-    setInfo(newInfo);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newInfo));
-  }
-
-  const handleOnResetForm = () => {
-    setInfo(initState);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initState));
-  }
+  const workArr = mapObjToArr(workObj)
+  const skills = addCheckedProperty(dataSkills, info?.skills)
+  const social = convertValue(socialData, info?.social, 'value')
+  const addon = convertValue(addonData, info?.add_ons, 'checked')
 
   return (
     <main className="px-5 py-8 sm:px-12 sm:py-12">
       <Title 
         data={info?.title}
-        onChangeInfo={handleOnChangeInfo} 
+        onChangeInfo={onChangeMainInfo} 
       />
       <Subtitle
         data={info?.subtitle}
-        onChangeInfo={handleOnChangeInfo}
+        onChangeInfo={onChangeMainInfo}
       />
       <Work 
         data={workArr}
-        onChangeInfo={handleOnChangeInfo}
+        onChangeInfo={onChangeMainInfo}
       />
       <Skills
         data={skills} 
-        onChangeInfo={handleOnChangeInfo}
+        onChangeInfo={onChangeMainInfo}
       />
       <Social
         data={social} 
-        onChangeInfo={handleOnChangeInfo}
+        onChangeInfo={onChangeMainInfo}
       />
       <AddOn 
         data={addon} 
-        onChangeInfo={handleOnChangeInfo}
+        onChangeInfo={onChangeMainInfo}
       />
       <Support
         data={info?.support}
-        onChangeInfo={handleOnChangeInfo}
+        onChangeInfo={onChangeMainInfo}
       />
       <EndMain
         dataSocial={social}
         dataAddons={addon}
+        onGeneratePart={onGeneratePart}
       />
       <ConfigForm 
-        onResetForm={handleOnResetForm}
+        onResetForm={onResetMainForm}
+        onRestoreForm={onRestoreMainForm}
       />
     </main>
   )

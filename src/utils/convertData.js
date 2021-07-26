@@ -59,3 +59,77 @@ export const convertValue = (data, infoData, key) => {
 
   return result;
 }
+
+// generate links
+export const generateLink = key => {
+  switch(key) {
+    case 'github':
+      return 'https://github.com'
+    
+    case 'twitter':
+      return 'https://twitter.com'
+
+    case 'devto':
+      return 'https://dev.to'
+
+    case 'codepen':
+      return 'https://codepen.io'
+
+    case 'codesanbox':
+      return 'https://codesandbox.com'
+
+    case 'stackoverflow':
+      return 'https://stackoverflow.com/users'
+    
+    case 'linkedin':
+      return 'https://linkedin.com/in'
+
+    case 'kaggle':
+      return 'https://kaggle.com'
+
+    case 'facebook':
+      return 'https://fb.com'
+
+    case 'instagram':
+      return 'https://instagram.com'
+
+    case 'dribble':
+      return 'https://dribbble.com'
+
+    case 'behance':
+      return 'https://www.behance.net'
+
+    case 'medium':
+      return 'https://medium.com'
+
+    case 'youtube':
+     return 'https://www.youtube.com/c'
+
+    case 'codechef':
+      return 'https://www.codechef.com/users'
+
+    case 'hackerrank':
+      return 'https://www.hackerrank.com'
+
+    case 'codeforces':
+      return 'https://codeforces.com/profile'
+
+    case 'leetcode':
+      return 'https://www.leetcode.com'
+
+    case 'topcoder':
+      return 'https://www.topcoder.com/members'
+
+    case 'hackerearth':
+      return 'https://www.hackerearth.com'
+
+    case 'gfg':
+      return 'https://auth.geeksforgeeks.org/user'
+
+    case 'dicord':
+      return 'https://discord.gg'
+
+    case 'rss':
+      return ''
+  }
+}
