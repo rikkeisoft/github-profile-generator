@@ -50,19 +50,17 @@ export default function GenerateRM({ data, onGeneratePart }) {
               title="copy"
               onClick={() => handleCopyToClipboard(markdownRef)}
             >
-              {
-                isCopied ?
+              {isCopied ? (
                 <>
                   <Check />
                   <span className="hidden sm:ml-1 sm:inline sm:text-base">Copied markdown</span>
                 </>
-                :
+              ) : (
                 <>
                   <Copy />
                   <span className="hidden sm:ml-1 sm:inline sm:text-base">Copy markdown</span>
                 </>
-              }
-
+              )}
             </button>
 
             <button className="btn w-16 flex items-center justify-center sm:w-24" title="download markdown">

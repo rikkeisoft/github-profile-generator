@@ -18,10 +18,12 @@ export default function VisitorsBadge() {
   useEffect(() => {
     const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
 
-    act(() => setBadge({
-      ...info.customize.badge,
-      username: info.social.github,
-    }))
+    act(() =>
+      setBadge({
+        ...info.customize.badge,
+        username: info.social.github,
+      }),
+    )
   }, [])
 
   const debounceSetRender = debounce(setRender, 300)
@@ -90,7 +92,9 @@ export default function VisitorsBadge() {
         <span className="mt-2 flex items-center sm:text-lg">
           Preview:&nbsp;
           <img
-            src={`https://komarev.com/ghpvc/?username=${badge?.username}&label=${badge?.labelText}&color=${badge?.color.slice(1)}&style=${badge?.styles}`}
+            src={`https://komarev.com/ghpvc/?username=${badge?.username}&label=${
+              badge?.labelText
+            }&color=${badge?.color.slice(1)}&style=${badge?.styles}`}
             alt="preview"
           />
         </span>

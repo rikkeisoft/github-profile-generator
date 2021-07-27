@@ -1,4 +1,4 @@
-export default function debounce (fn, delay) {
+export default function debounce(fn, delay) {
   return (args) => {
     clearTimeout(fn.id)
 

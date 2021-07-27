@@ -33,10 +33,7 @@ export default function AddOnCheck({ content, name, checked, onCheckbox, canModi
           {content}
         </label>
         {canModify && (
-          <button
-            className="ml-2 cursor-pointer"
-            onClick={handleModifyComponent}
-          >
+          <button className="ml-2 cursor-pointer" onClick={handleModifyComponent}>
             {isOpen ? <Setting /> : <Close />}
           </button>
         )}

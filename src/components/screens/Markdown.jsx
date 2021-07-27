@@ -33,10 +33,8 @@ const fillValueSocial = (socialLocal) => {
 const MiniTitle = ({ title }) => {
   return (
     <>
-      {
-`
-<h3 align="left">${title}</h3>`
-      }
+      {`
+<h3 align="left">${title}</h3>`}
       <br />
     </>
   )
@@ -46,10 +44,8 @@ const Title = ({ prefix, name }) => {
   if (prefix && name) {
     return (
       <>
-        {
-`
-<h1 align="center">${prefix + ' ' + name}</h1>`
-        }
+        {`
+<h1 align="center">${prefix + ' ' + name}</h1>`}
         <br />
       </>
     )
@@ -62,10 +58,8 @@ const Subtitle = ({ sub }) => {
   if (sub) {
     return (
       <>
-        {
-`
-<h3 align="center">${sub}</h3>`
-        }
+        {`
+<h3 align="center">${sub}</h3>`}
         <br />
         <br />
       </>
@@ -78,15 +72,13 @@ const Subtitle = ({ sub }) => {
 const GithubTrophy = ({ username }) => {
   return (
     <>
-      {
-`
+      {`
 <p align="left">
   <a href="https://github.com/ryo-ma/github-profile-trophy" target="_blank">
     <img src="https://github-profile-trophy.vercel.app/?username=${username}" alt=${username} />
   </a>
 </p>
-`
-      }
+`}
       <br />
       <br />
     </>
@@ -96,15 +88,13 @@ const GithubTrophy = ({ username }) => {
 const TwitterBadge = ({ username }) => {
   return (
     <>
-      {
-`
+      {`
 <p align="left">
   <a href="https://twitter.com/${username}" target="_blank">
     <img src="https://img.shields.io/twitter/follow/${username}?logo=twitter&style=for-the-badge" alt=${username} />
   </a>
 </p>
-`
-      }
+`}
       <br />
       <br />
     </>
@@ -114,16 +104,16 @@ const TwitterBadge = ({ username }) => {
 const VisitorsBadge = ({ username, customizeBadge }) => {
   return (
     <>
-      {
-`
+      {`
 <p align="left">
   <img
-    src="https://komarev.com/ghpvc/?username=${username}&label=${customizeBadge.labelText}&color=${customizeBadge.color.slice(1)}&style=${customizeBadge.styles}"
+    src="https://komarev.com/ghpvc/?username=${username}&label=${
+        customizeBadge.labelText
+      }&color=${customizeBadge.color.slice(1)}&style=${customizeBadge.styles}"
     alt=${username}
   />
 </p>
-`
-      }
+`}
       <br />
       <br />
     </>
@@ -135,43 +125,43 @@ const Work = ({ prefix, project, link, data }) => {
     if (link) {
       return (
         <>
-{`
+          {`
 - ${prefix} [${project}](${link})
 `}
-<br />
-<br />
+          <br />
+          <br />
         </>
       )
     }
     return (
       <>
-{`
+        {`
 - ${prefix} **${project}**
 `}
-<br />
-<br />
+        <br />
+        <br />
       </>
     )
   }
   if (prefix && link) {
     return (
       <>
-{`
+        {`
 - ${prefix} [${link}](${link})
 `}
-  <br />
-  <br />
+        <br />
+        <br />
       </>
     )
   }
   if (prefix && data) {
     return (
       <>
-{`
+        {`
 - ${prefix} **${data}**
 `}
-<br />
-<br />
+        <br />
+        <br />
       </>
     )
   }
@@ -212,8 +202,7 @@ const Social = ({ diffKey, username, imgSrc }) => {
     const url = generateLink(diffKey)
     return (
       <>
-{
-`
+        {`
 <a href="${url}/${username}" target="_blank">
   <img
     align="center"
@@ -238,7 +227,7 @@ const LanguageAndTool = ({ skills }) => {
         const imgSrc = findImgSrc(key)
         const url = skillWebsites[key]
         listSkills.push(
-`
+          `
 <a href="${url}" target="_blank">
   <img
     src="${imgSrc}"
@@ -255,7 +244,7 @@ const LanguageAndTool = ({ skills }) => {
     listSkills.length > 0 && (
       <>
         <MiniTitle title="Languages and Tools: " />
-{`
+        {`
 <p align="left">${listSkills.join(' ')}</p>`}
         <br />
         <br />
@@ -266,27 +255,27 @@ const LanguageAndTool = ({ skills }) => {
 
 const TopLanguages = ({ username, customizeDetail }) => {
   const { bgColor, cacheSeconds, hideBorder, locale, textColor, theme, titleColor } = customizeDetail
-  const imgSrc = `https://github-readme-stats.vercel.app/api/top-langs?username=${username}&show_icons=true`
-  + `&theme=${theme}`
-  + `&title_color=${titleColor.slice(1)}`
-  + `&text_color=${textColor.slice(1)}`
-  + `&bg_color=${bgColor.slice(1)}`
-  + (hideBorder ? `&hide_boder=${hideBorder}` : '')
-  + (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '')
-  + `&locale=${locale}` + '&layout=compact'
+  const imgSrc =
+    `https://github-readme-stats.vercel.app/api/top-langs?username=${username}&show_icons=true` +
+    `&theme=${theme}` +
+    `&title_color=${titleColor.slice(1)}` +
+    `&text_color=${textColor.slice(1)}` +
+    `&bg_color=${bgColor.slice(1)}` +
+    (hideBorder ? `&hide_boder=${hideBorder}` : '') +
+    (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '') +
+    `&locale=${locale}` +
+    '&layout=compact'
 
   return (
     <>
-      {
-`
+      {`
 <p align="left">
   <img
     src="${imgSrc}"
     alt=${username}
   />
 </p>
-`
-      }
+`}
       <br />
       <br />
     </>
@@ -295,18 +284,18 @@ const TopLanguages = ({ username, customizeDetail }) => {
 
 const GithubStats = ({ username, customizeStats }) => {
   const { bgColor, cacheSeconds, hideBorder, locale, textColor, theme, titleColor } = customizeStats
-  const imgSrc = `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true`
-  + `&theme=${theme}`
-  + `&title_color=${titleColor.slice(1)}`
-  + `&text_color=${textColor.slice(1)}`
-  + `&bg_color=${bgColor.slice(1)}`
-  + (hideBorder ? `&hide_boder=${hideBorder}` : '')
-  + (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '')
-  + `&locale=${locale}`
+  const imgSrc =
+    `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true` +
+    `&theme=${theme}` +
+    `&title_color=${titleColor.slice(1)}` +
+    `&text_color=${textColor.slice(1)}` +
+    `&bg_color=${bgColor.slice(1)}` +
+    (hideBorder ? `&hide_boder=${hideBorder}` : '') +
+    (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '') +
+    `&locale=${locale}`
   return (
     <>
-      {
-`
+      {`
 <p align="left">
   <img
     align="center"
@@ -314,8 +303,7 @@ const GithubStats = ({ username, customizeStats }) => {
     alt=${username}
   />
 </p>
-`
-      }
+`}
       <br />
       <br />
     </>
@@ -328,8 +316,7 @@ const GithubStreakStats = ({ username, customizeStreakStats }) => {
 
   return (
     <>
-      {
-`
+      {`
 <p align="left">
   <img
     align="center"
@@ -337,8 +324,7 @@ const GithubStreakStats = ({ username, customizeStreakStats }) => {
     alt=${username}
   />
 </p>
-`
-      }
+`}
       <br />
       <br />
     </>
@@ -369,15 +355,9 @@ const Markdown = React.forwardRef(({ data, workData }, ref) => {
           <>
             <Subtitle sub={data.subtitle.sub} />
           </>
-          <>
-            {isVisitorsBadge && <VisitorsBadge username={githubUsername} customizeBadge={customizeBadge} />}
-          </>
-          <>
-            {isGithubTrophy && <GithubTrophy username={githubUsername} />}
-          </>
-          <>
-            {isTwitterBadge && <TwitterBadge username={twitterUsername} />}
-          </>
+          <>{isVisitorsBadge && <VisitorsBadge username={githubUsername} customizeBadge={customizeBadge} />}</>
+          <>{isGithubTrophy && <GithubTrophy username={githubUsername} />}</>
+          <>{isTwitterBadge && <TwitterBadge username={twitterUsername} />}</>
           <>
             {workData.map((item) => (
               <Work
@@ -391,9 +371,9 @@ const Markdown = React.forwardRef(({ data, workData }, ref) => {
           </>
           <>
             {isSocial(data.social) && <MiniTitle title="Connect with me:" />}
-              {fillValueSocial(data.social).map((item) => (
-                <Social key={item.key} diffKey={item.key} username={item.value} imgSrc={item.imgSrc} />
-              ))}
+            {fillValueSocial(data.social).map((item) => (
+              <Social key={item.key} diffKey={item.key} username={item.value} imgSrc={item.imgSrc} />
+            ))}
             {isSocial(data.social) && (
               <>
                 <br />
@@ -404,15 +384,12 @@ const Markdown = React.forwardRef(({ data, workData }, ref) => {
           <>
             <LanguageAndTool skills={data.skills} />
           </>
+          <>{isTopSkills && <TopLanguages username={githubUsername} customizeDetail={customizeDetail} />}</>
+          <>{isGithubStatsCard && <GithubStats username={githubUsername} customizeStats={customizeStats} />}</>
           <>
-            {isTopSkills && <TopLanguages username={githubUsername} customizeDetail={customizeDetail} />}
-          </>
-          <>
-            {isGithubStatsCard && <GithubStats username={githubUsername} customizeStats={customizeStats} />}
-          </>
-          <>
-            {isStreakStats &&
-            <GithubStreakStats username={githubUsername} customizeStreakStats={customizeStreakStats} />}
+            {isStreakStats && (
+              <GithubStreakStats username={githubUsername} customizeStreakStats={customizeStreakStats} />
+            )}
           </>
         </div>
       )}

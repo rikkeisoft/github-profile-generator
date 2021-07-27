@@ -15,10 +15,12 @@ export default function Header() {
       const data = await response.json()
       const { stargazers_count, forks_count } = data
 
-      act(() => setStats({
-        starCount: stargazers_count,
-        forkCount: forks_count,
-      }))
+      act(() =>
+        setStats({
+          starCount: stargazers_count,
+          forkCount: forks_count,
+        }),
+      )
     }
 
     fetchData()
@@ -28,22 +30,18 @@ export default function Header() {
 
   return (
     <div className="flex flex-col justify-center items-center py-2 border-b border-gray-300">
-      <img
-        src="https://avatars.githubusercontent.com/u/53306165?v=4"
-        alt="Logo"
-        className="w-12 h-12 cursor-pointer"
-      />
+      <img src="https://avatars.githubusercontent.com/u/53306165?v=4" alt="Logo" className="w-12 h-12 cursor-pointer" />
       <span className="leading-5 text-sm font-medium text-blue-900 cursor-pointer sm:text-2xl">
         GitHub Profile README Generator
       </span>
       <div className="flex my-1">
         <button className="sm:text-sm btn">
           Star this repo
-          <span className="ml-1 text-purple-600">{ stats.starCount }</span>
+          <span className="ml-1 text-purple-600">{stats.starCount}</span>
         </button>
         <button className="ml-4 sm:text-sm btn">
           Fork on Github
-          <span className="ml-1 text-purple-600">{ stats.forkCount }</span>
+          <span className="ml-1 text-purple-600">{stats.forkCount}</span>
         </button>
       </div>
     </div>

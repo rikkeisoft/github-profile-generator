@@ -56,18 +56,17 @@ export default function Home() {
   return (
     <div className="z-0">
       <Header />
-      {
-        isGeneratePage ?
-          <GenerateRM data={info} onGeneratePart={handleGeneratePart} />
-        :
-          <Main
-            info={info}
-            onChangeMainInfo={handleOnChangeInfo}
-            onResetMainForm={handleOnResetForm}
-            onRestoreMainForm={handleOnRestoreForm}
-            onGeneratePart={handleGeneratePart}
-          />
-      }
+      {isGeneratePage ? (
+        <GenerateRM data={info} onGeneratePart={handleGeneratePart} />
+      ) : (
+        <Main
+          info={info}
+          onChangeMainInfo={handleOnChangeInfo}
+          onResetMainForm={handleOnResetForm}
+          onRestoreMainForm={handleOnRestoreForm}
+          onGeneratePart={handleGeneratePart}
+        />
+      )}
       <Footer />
     </div>
   )

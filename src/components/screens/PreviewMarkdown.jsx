@@ -86,7 +86,9 @@ const VisitorsBadgePreview = ({ username, customizeBadge }) => {
   return (
     <div className="mb-4">
       <img
-        src={`https://komarev.com/ghpvc/?username=${username}&label=${customizeBadge.labelText}&color=${customizeBadge.color.slice(1)}&style=${customizeBadge.styles}`}
+        src={`https://komarev.com/ghpvc/?username=${username}&label=${
+          customizeBadge.labelText
+        }&color=${customizeBadge.color.slice(1)}&style=${customizeBadge.styles}`}
         alt={username}
         className="h-5 sm:h-7"
       />
@@ -203,44 +205,39 @@ const LanguageAndToolPreview = ({ skills }) => {
 
 const TopLanguagesPreview = ({ username, customizeDetail }) => {
   const { bgColor, cacheSeconds, hideBorder, locale, textColor, theme, titleColor } = customizeDetail
-  const imgSrc = `https://github-readme-stats.vercel.app/api/top-langs?username=${username}&show_icons=true`
-  + `&theme=${theme}`
-  + `&title_color=${titleColor.slice(1)}`
-  + `&text_color=${textColor.slice(1)}`
-  + `&bg_color=${bgColor.slice(1)}`
-  + (hideBorder ? `&hide_boder=${hideBorder}` : '')
-  + (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '')
-  + `&locale=${locale}`
+  const imgSrc =
+    `https://github-readme-stats.vercel.app/api/top-langs?username=${username}&show_icons=true` +
+    `&theme=${theme}` +
+    `&title_color=${titleColor.slice(1)}` +
+    `&text_color=${textColor.slice(1)}` +
+    `&bg_color=${bgColor.slice(1)}` +
+    (hideBorder ? `&hide_boder=${hideBorder}` : '') +
+    (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '') +
+    `&locale=${locale}`
 
   return (
     <div className="my-3">
-      <img
-        src={imgSrc}
-        alt={username}
-        className="h-64"
-      />
+      <img src={imgSrc} alt={username} className="h-64" />
     </div>
   )
 }
 
 const GithubStatsPreview = ({ username, customizeStats }) => {
   const { bgColor, cacheSeconds, hideBorder, locale, textColor, theme, titleColor } = customizeStats
-  const imgSrc = `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true`
-  + `&theme=${theme}`
-  + `&title_color=${titleColor.slice(1)}`
-  + `&text_color=${textColor.slice(1)}`
-  + `&bg_color=${bgColor.slice(1)}`
-  + (hideBorder ? `&hide_boder=${hideBorder}` : '')
-  + (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '')
-  + `&locale=${locale}` + '&layout=compact'
+  const imgSrc =
+    `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true` +
+    `&theme=${theme}` +
+    `&title_color=${titleColor.slice(1)}` +
+    `&text_color=${textColor.slice(1)}` +
+    `&bg_color=${bgColor.slice(1)}` +
+    (hideBorder ? `&hide_boder=${hideBorder}` : '') +
+    (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '') +
+    `&locale=${locale}` +
+    '&layout=compact'
 
   return (
     <div className="my-3">
-      <img
-        src={imgSrc}
-        alt={username}
-        className="h-48 text-center sm:h-48"
-      />
+      <img src={imgSrc} alt={username} className="h-48 text-center sm:h-48" />
     </div>
   )
 }
@@ -251,11 +248,7 @@ const GithubStreakStatsPreview = ({ username, customizeStreakStats }) => {
 
   return (
     <div className="my-3">
-      <img
-        src={imgSrc}
-        alt={username}
-        className="h-48 text-center sm:h-48"
-      />
+      <img src={imgSrc} alt={username} className="h-48 text-center sm:h-48" />
     </div>
   )
 }
@@ -306,8 +299,9 @@ export default function PreviewMarkdown({ data, workData }) {
       <div className="sm:flex sm:flex-wrap sm:items-center sm:justify-between">
         {isTopSkills && <TopLanguagesPreview username={githubUsername} customizeDetail={customizeDetail} />}
         {isGithubStatsCard && <GithubStatsPreview username={githubUsername} customizeStats={customizeStats} />}
-        {isStreakStats &&
-        <GithubStreakStatsPreview username={githubUsername} customizeStreakStats={customizeStreakStats} />}
+        {isStreakStats && (
+          <GithubStreakStatsPreview username={githubUsername} customizeStreakStats={customizeStreakStats} />
+        )}
       </div>
     </div>
   )

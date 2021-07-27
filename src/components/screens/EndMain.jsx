@@ -7,8 +7,7 @@ const filterData = (data) => {
   const filterDataSocial = []
 
   for (const item of data) {
-    if (item.key === 'github' || item.key === 'twitter')
-      filterDataSocial.push(item)
+    if (item.key === 'github' || item.key === 'twitter') filterDataSocial.push(item)
   }
 
   return filterDataSocial
@@ -47,11 +46,7 @@ export default function EndMain({ dataSocial, dataAddons, onGeneratePart }) {
         ))}
       </div>
       <div className="text-center">
-        <button
-          className="sm:text-xl btn"
-          onClick={onGeneratePart}
-          disabled={errors.length > 0}
-        >
+        <button className="sm:text-xl btn" onClick={onGeneratePart} disabled={errors.length > 0}>
           Generate README
         </button>
       </div>
