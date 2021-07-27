@@ -9,9 +9,11 @@ import Download from '@components/elements/svg/Download'
 import Backup from '@components/elements/svg/Backup'
 import Preview from '@components/elements/svg/Preview'
 import Code from '@components/elements/svg/Code'
+import Check from '@components/elements/svg/Check'
 
 export default function GenerateRM({ data, onGeneratePart }) {
   const [isPreviewMD, setIsPreviewMD] = useState(false)
+  const [isCopied, setIsCopied] = useState(false)
   const [downloadMDFileURL, setDownloadMDFileURL] = useState('')
   const markdownRef = useRef(null)
   const workObj = {
@@ -28,7 +30,10 @@ export default function GenerateRM({ data, onGeneratePart }) {
   }, [])
 
   const handleChangeIsPreviewMD = () => setIsPreviewMD(!isPreviewMD)
-  const handleCopyToClipboard = (markdownRef) => navigator.clipboard.writeText(markdownRef.current.textContent)
+  const handleCopyToClipboard = (markdownRef) => {
+    setIsCopied(true)
+    navigator.clipboard.writeText(markdownRef.current.textContent)
+  }
 
   return (
     <div className="py-10 px-8">
@@ -45,8 +50,19 @@ export default function GenerateRM({ data, onGeneratePart }) {
               title="copy"
               onClick={() => handleCopyToClipboard(markdownRef)}
             >
-              <Copy />
-              <span className="hidden sm:ml-1 sm:inline sm:text-base">Copy markdown</span>
+              {
+                isCopied ?
+                <>
+                  <Check />
+                  <span className="hidden sm:ml-1 sm:inline sm:text-base">Copied markdown</span>
+                </>
+                :
+                <>
+                  <Copy />
+                  <span className="hidden sm:ml-1 sm:inline sm:text-base">Copy markdown</span>
+                </>
+              }
+
             </button>
 
             <button className="btn w-16 flex items-center justify-center sm:w-24" title="download markdown">

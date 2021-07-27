@@ -157,7 +157,7 @@ const Work = ({ prefix, project, link, data }) => {
     return (
       <>
 {`
-- ${prefix}[${link}](${link})
+- ${prefix} [${link}](${link})
 `}
   <br />
   <br />
