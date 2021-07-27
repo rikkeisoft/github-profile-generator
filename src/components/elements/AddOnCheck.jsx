@@ -4,11 +4,12 @@ import GithubStats from './customize/GithubStats'
 import StreakStats from './customize/StreakStats'
 import Setting from './svg/Setting'
 import Close from './svg/Close'
+import { act } from 'react-dom/test-utils'
 
 export default function AddOnCheck({ content, name, checked, onCheckbox, canModify }) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleModifyComponent = () => setIsOpen(!isOpen)
+  const handleModifyComponent = () => act(() => setIsOpen(!isOpen))
 
   const handleChoose = (e) => {
     const newValue = {
@@ -32,9 +33,12 @@ export default function AddOnCheck({ content, name, checked, onCheckbox, canModi
           {content}
         </label>
         {canModify && (
-          <span className="ml-2 cursor-pointer" onClick={handleModifyComponent}>
+          <button
+            className="ml-2 cursor-pointer"
+            onClick={handleModifyComponent}
+          >
             {isOpen ? <Setting /> : <Close />}
-          </span>
+          </button>
         )}
       </div>
 

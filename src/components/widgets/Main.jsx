@@ -3,7 +3,6 @@ import ConfigForm from '@components/screens/ConfigForm'
 import EndMain from '@components/screens/EndMain'
 import Skills from '@components/screens/Skills'
 import Social from '@components/screens/Social'
-import Support from '@components/screens/Support'
 import addonData from 'public/json/add-ons.json'
 import dataSkills from 'public/json/skills.json'
 import socialData from 'public/json/social.json'
@@ -33,8 +32,7 @@ export default function Main({ info, onChangeMainInfo, onResetMainForm, onRestor
       <Skills data={skills} onChangeInfo={onChangeMainInfo} />
       <Social data={social} onChangeInfo={onChangeMainInfo} />
       <AddOn data={addon} onChangeInfo={onChangeMainInfo} />
-      <Support data={info?.support} onChangeInfo={onChangeMainInfo} />
-      <EndMain dataSocial={social} dataAddons={addon} onGeneratePart={onGeneratePart} />
+      {social && <EndMain dataSocial={social} dataAddons={addon} onGeneratePart={onGeneratePart} />}
       <ConfigForm onResetForm={onResetMainForm} onRestoreForm={onRestoreMainForm} />
     </main>
   )

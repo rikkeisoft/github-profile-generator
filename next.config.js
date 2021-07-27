@@ -1,7 +1,6 @@
 module.exports = {
   images: {
     domains: [
-      'raw.githubusercontent.com',
       'api.iconify.design',
       'www.vectorlogo.zone',
       'upload.wikimedia.org',
@@ -17,9 +16,8 @@ module.exports = {
       'cdn.quasar.dev',
       'download.blender.org',
       'gist.githubusercontent.com',
-      'rahuldkjain.github.io',
       'cdn.jsdelivr.net',
-      'cdn.buymeacoffee.com',
+      'cybernews.com',
     ],
   },
   extends: ['plugin:@next/next/recommended'],

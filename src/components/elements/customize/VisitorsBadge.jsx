@@ -1,20 +1,30 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { act } from 'react-dom/test-utils'
+import { RenderContext } from 'src/contexts/RenderContext'
 import { LOCAL_STORAGE_KEY } from 'src/utils/constants'
+import debounce from 'src/utils/debounce'
 
 const initValue = {
-  styles: 'Flat',
+  styles: 'flat',
   color: '#0e75b6',
   labelText: 'Profile views',
+  username: '',
 }
 
 export default function VisitorsBadge() {
   const [badge, setBadge] = useState(initValue)
+  const { render, setRender } = useContext(RenderContext)
 
   useEffect(() => {
     const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
 
-    setBadge(info.customize.badge)
+    act(() => setBadge({
+      ...info.customize.badge,
+      username: info.social.github,
+    }))
   }, [])
+
+  const debounceSetRender = debounce(setRender, 300)
 
   const handleOnChangeValue = (e) => {
     const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
@@ -29,8 +39,9 @@ export default function VisitorsBadge() {
       },
     }
 
-    setBadge((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    act(() => setBadge((prev) => ({ ...prev, [e.target.name]: e.target.value })))
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize))
+    debounceSetRender(!render)
   }
 
   return (
@@ -39,10 +50,16 @@ export default function VisitorsBadge() {
       <div className="mt-2 flex flex-col justify-center">
         <label htmlFor="badge-style" className="sm:text-lg">
           Style:&nbsp;
-          <select id="badge-style" name="styles" value={badge?.styles} onBlur={handleOnChangeValue}>
-            <option value="Flat">Flat</option>
-            <option value="Flat-Square">Flat Square</option>
-            <option value="Plastic">Plastic</option>
+          <select
+            id="badge-style"
+            name="styles"
+            value={badge?.styles}
+            onBlur={handleOnChangeValue}
+            onChange={handleOnChangeValue}
+          >
+            <option value="flat">Flat</option>
+            <option value="flat-square">Flat Square</option>
+            <option value="plastic">Plastic</option>
           </select>
         </label>
 
@@ -70,24 +87,13 @@ export default function VisitorsBadge() {
           />
         </label>
 
-        <label htmlFor="badge-prevew" className="mt-2 sm:text-lg">
+        <span className="mt-2 flex items-center sm:text-lg">
           Preview:&nbsp;
-          <span>
-            <input
-              id="badge-prevew"
-              type="text"
-              value={badge?.labelText}
-              readOnly
-              className="w-2/6 px-2 bg-gray-700 rounded-tl-sm rounded-bl-sm text-yellow-50 text-sm"
-            />
-            <input
-              type="color"
-              value={badge.color}
-              readOnly
-              className="relative w-6 h-6 sm:text-sm before:content-['0'] before:absolute before:right-2 before:top-0.5 before:text-white"
-            />
-          </span>
-        </label>
+          <img
+            src={`https://komarev.com/ghpvc/?username=${badge?.username}&label=${badge?.labelText}&color=${badge?.color.slice(1)}&style=${badge?.styles}`}
+            alt="preview"
+          />
+        </span>
       </div>
     </div>
   )

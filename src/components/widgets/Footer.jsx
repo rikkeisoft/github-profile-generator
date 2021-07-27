@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="mb-6 flex flex-col sm:justify-between sm:flex-row">
         <div className="mb-2 order-4 sm:mb-0 sm:order-1">
           <img
-            src="https://rahuldkjain.github.io/gh-profile-readme-generator/static/mdg-040f54e2f6c858e0a3dcf568c3f2b6f1.png"
+            src="https://avatars.githubusercontent.com/u/53306165?v=4"
             alt="Logo"
-            className="w-12 h-12 cursor-pointer sm:w-24 sm:h-24"
+            className="w-12 h-12 rounded-full cursor-pointer sm:w-24 sm:h-24"
           />
           <span className="leading-5 text-xl font-medium sm:text-2xl">GitHub Profile README Generator</span>
         </div>

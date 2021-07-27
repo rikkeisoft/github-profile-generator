@@ -238,21 +238,18 @@
     "githubStatsCard": false,
     "topSkills": false,
     "githubStreakStats": false,
-    "twitterBadge": false,
-    "devDynamicBlog": false,
-    "mediumDynamicBlog": false,
-    "personalDynamicBlog": false
+    "twitterBadge": false
   },
   "customize": {
     "badge": {
-      "styles": "Flat",
+      "styles": "flat",
       "color": "#0e75b6",
       "labelText": "Profile views"
     },
     "githubStatsCard": {
       "theme": "none",
-      "titleColor": "#000000",
-      "textColor": "#000000",
+      "titleColor": "#ffffff",
+      "textColor": "#ffffff",
       "bgColor": "#000000",
       "hideBorder": false,
       "cacheSeconds": "1800",
@@ -260,8 +257,8 @@
     },
     "topSkills": {
       "theme": "none",
-      "titleColor": "#000000",
-      "textColor": "#000000",
+      "titleColor": "#ffffff",
+      "textColor": "#ffffff",
       "bgColor": "#000000",
       "hideBorder": false,
       "cacheSeconds": "1800",
@@ -270,8 +267,5 @@
     "streakStats": {
       "theme": "default"
     }
-  },
-  "support": {
-    "buyMeACoffee": ""
   }
 }

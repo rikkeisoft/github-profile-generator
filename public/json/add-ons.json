@@ -34,23 +34,5 @@
     "content": "display twitter badge",
     "checked": false,
     "canModify": false
-  },
-  {
-    "key": "devDynamicBlog",
-    "content": "display latest dev.to blogs dynamically (GitHub Action)",
-    "checked": false,
-    "canModify": false
-  },
-  {
-    "key": "mediumDynamicBlog",
-    "content": "display latest medium blogs dynamically (GitHub Action)",
-    "checked": false,
-    "canModify": false
-  },
-  {
-    "key": "personalDynamicBlog",
-    "content": "display latest blogs from your personal blog dynamically (GitHub Action)",
-    "checked": false,
-    "canModify": false
   }
 ]

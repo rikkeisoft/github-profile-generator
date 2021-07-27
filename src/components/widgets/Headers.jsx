@@ -1,8 +1,35 @@
+import { useEffect, useState } from 'react'
+import { act } from 'react-dom/test-utils'
+
+const apiURL = 'https://api.github.com/repos/LeDucLoi193/github-profile-clone'
+
 export default function Header() {
+  const [stats, setStats] = useState({
+    starCount: 0,
+    forkCount: 0,
+  })
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(apiURL)
+      const data = await response.json()
+      const { stargazers_count, forks_count } = data
+
+      act(() => setStats({
+        starCount: stargazers_count,
+        forkCount: forks_count,
+      }))
+    }
+
+    fetchData()
+
+    return () => {}
+  }, [])
+
   return (
-    <div className="flex flex-col justify-center items-center py-1 border-b border-gray-300">
+    <div className="flex flex-col justify-center items-center py-2 border-b border-gray-300">
       <img
-        src="https://rahuldkjain.github.io/gh-profile-readme-generator/static/mdg-040f54e2f6c858e0a3dcf568c3f2b6f1.png"
+        src="https://avatars.githubusercontent.com/u/53306165?v=4"
         alt="Logo"
         className="w-12 h-12 cursor-pointer"
       />
@@ -12,11 +39,11 @@ export default function Header() {
       <div className="flex my-1">
         <button className="sm:text-sm btn">
           Star this repo
-          <span className="ml-1 text-purple-600">6169</span>
+          <span className="ml-1 text-purple-600">{ stats.starCount }</span>
         </button>
         <button className="ml-4 sm:text-sm btn">
           Fork on Github
-          <span className="ml-1 text-purple-600">1063</span>
+          <span className="ml-1 text-purple-600">{ stats.forkCount }</span>
         </button>
       </div>
     </div>

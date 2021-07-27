@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { act } from 'react-dom/test-utils'
+import { RenderContext } from 'src/contexts/RenderContext'
 import { LOCAL_STORAGE_KEY } from 'src/utils/constants'
+import debounce from 'src/utils/debounce'
 
 const initValue = {
   theme: 'none',
-  titleColor: '#000000',
-  textColor: '#000000',
+  titleColor: '#ffffff',
+  textColor: '#ffffff',
   bgColor: '#000000',
   hideBorder: false,
   cacheSeconds: '1800',
@@ -13,12 +16,15 @@ const initValue = {
 
 export default function GithubStats({ name }) {
   const [stats, setStats] = useState(initValue)
+  const { render, setRender } = useContext(RenderContext)
 
   useEffect(() => {
     const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
 
-    setStats(info.customize[name])
+    act(() => setStats(info.customize[name]))
   }, [])
+
+  const debounceSetRender = debounce(setRender, 300)
 
   const handleOnChangeValue = (e) => {
     const info = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
@@ -41,8 +47,9 @@ export default function GithubStats({ name }) {
       },
     }
 
-    setStats(newStats)
+    act(() => setStats(newStats))
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newCustomize))
+    act(() => debounceSetRender(!render))
   }
 
   return (
@@ -53,18 +60,24 @@ export default function GithubStats({ name }) {
       <div className="mt-2 flex flex-col justify-center sm:text-lg">
         <label htmlFor="card-theme">
           Theme:&nbsp;
-          <select id="card-theme" name="theme" value={stats?.theme} onBlur={handleOnChangeValue}>
+          <select
+            id="card-theme"
+            name="theme"
+            value={stats?.theme}
+            onBlur={handleOnChangeValue}
+            onChange={handleOnChangeValue}
+          >
             <option value="none">none</option>
-            <option value="Dark">Dark</option>
-            <option value="Radical">Radical</option>
-            <option value="Merko">Merko</option>
-            <option value="Gruvbox">Gruvbox</option>
-            <option value="Tokyonight">Tokyonight</option>
-            <option value="Onedark">Onedark</option>
-            <option value="Cobalt">Cobalt</option>
-            <option value="Synthwave">Synthwave</option>
-            <option value="Hightcontrast">Hightcontrast</option>
-            <option value="Dracula">Dracula</option>
+            <option value="dark">Dark</option>
+            <option value="radical">Radical</option>
+            <option value="merko">Merko</option>
+            <option value="gruvbox">Gruvbox</option>
+            <option value="tokyonight">Tokyonight</option>
+            <option value="onedark">Onedark</option>
+            <option value="cobalt">Cobalt</option>
+            <option value="synthwave">Synthwave</option>
+            <option value="hightcontrast">Hightcontrast</option>
+            <option value="dracula">Dracula</option>
           </select>
         </label>
 

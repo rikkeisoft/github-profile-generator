@@ -3,13 +3,13 @@
     "key": "github",
     "value": "",
     "placeholder": "github username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/github.svg"
   },
   {
     "key": "twitter",
     "value": "",
     "placeholder": "twitter username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/twitter.svg"
   },
   {
     "key": "devto",
@@ -21,7 +21,7 @@
     "key": "codepen",
     "value": "",
     "placeholder": "codepen username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/codepen.svg"
   },
   {
     "key": "codesanbox",
@@ -33,55 +33,55 @@
     "key": "stackoverflow",
     "value": "",
     "placeholder": "stackoverflow username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/stack-overflow.svg"
   },
   {
     "key": "linkedin",
     "value": "",
     "placeholder": "linkedin username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/linked-in.svg"
   },
   {
     "key": "kaggle",
     "value": "",
     "placeholder": "kaggle username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/kaggle.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/kaggle.svg"
   },
   {
     "key": "facebook",
     "value": "",
     "placeholder": "facebook username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/facebook.svg"
   },
   {
     "key": "instagram",
     "value": "",
     "placeholder": "instagram username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/instagram.svg"
   },
   {
     "key": "dribble",
     "value": "",
     "placeholder": "dribble username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/dribbble.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/dribble.svg"
   },
   {
     "key": "behance",
     "value": "",
     "placeholder": "behance username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/behance.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/behance.svg"
   },
   {
     "key": "medium",
     "value": "",
     "placeholder": "medium username (with @)",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/medium.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/medium.svg"
   },
   {
     "key": "youtube",
     "value": "",
     "placeholder": "youtube channel username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/youtube.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/youtubez.svg"
   },
   {
     "key": "codechef",
@@ -93,48 +93,48 @@
     "key": "hackerrank",
     "value": "",
     "placeholder": "hackerrank username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/hackerrank.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/hackerrank.svg"
   },
   {
     "key": "codeforces",
     "value": "",
     "placeholder": "codeforces username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/codeforces.svg"
+    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codeforces.svg"
   },
   {
     "key": "leetcode",
     "value": "",
     "placeholder": "leetcode username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/leetcode.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/leet-code.svg"
   },
   {
     "key": "topcoder",
     "value": "",
     "placeholder": "topcoder username",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/topcoder.svg"
+    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/topcoder.svg"
   },
   {
     "key": "hackerearth",
     "value": "",
     "placeholder": "hackerearth username (with @)",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/hackerearth.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/hackerearth.svg"
   },
   {
     "key": "gfg",
     "value": "",
     "placeholder": "GFG (<username>/profile)",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/geeksforgeeks.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/geeks-for-geeks.svg"
   },
   {
-    "key": "dicord",
+    "key": "discord",
     "value": "",
-    "placeholder": "dicord invite (only)",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/discord.svg"
+    "placeholder": "discord invite (only)",
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/discord.svg"
   },
   {
     "key": "rss",
     "value": "",
     "placeholder": "RSS feed URL",
-    "imgSrc": "https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/rss.svg"
+    "imgSrc": "https://raw.githubusercontent.com/LeDucLoi193/github-profile-clone/main/public/img/rss.svg"
   }
 ]

@@ -61,7 +61,7 @@ const GithubTrophyPreview = ({ username }) => {
         <img
           src={`https://github-profile-trophy.vercel.app/?username=${username}`}
           alt={username}
-          className="h-48 sm:h-64"
+          className="w-full h-48 sm:h-64"
         />
       </a>
     </div>
@@ -78,6 +78,18 @@ const TwitterBadgePreview = ({ username }) => {
           className="h-4 sm:h-6"
         />
       </a>
+    </div>
+  )
+}
+
+const VisitorsBadgePreview = ({ username, customizeBadge }) => {
+  return (
+    <div className="mb-4">
+      <img
+        src={`https://komarev.com/ghpvc/?username=${username}&label=${customizeBadge.labelText}&color=${customizeBadge.color.slice(1)}&style=${customizeBadge.styles}`}
+        alt={username}
+        className="h-5 sm:h-7"
+      />
     </div>
   )
 }
@@ -189,17 +201,85 @@ const LanguageAndToolPreview = ({ skills }) => {
   )
 }
 
+const TopLanguagesPreview = ({ username, customizeDetail }) => {
+  const { bgColor, cacheSeconds, hideBorder, locale, textColor, theme, titleColor } = customizeDetail
+  const imgSrc = `https://github-readme-stats.vercel.app/api/top-langs?username=${username}&show_icons=true`
+  + `&theme=${theme}`
+  + `&title_color=${titleColor.slice(1)}`
+  + `&text_color=${textColor.slice(1)}`
+  + `&bg_color=${bgColor.slice(1)}`
+  + (hideBorder ? `&hide_boder=${hideBorder}` : '')
+  + (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '')
+  + `&locale=${locale}`
+
+  return (
+    <div className="my-3">
+      <img
+        src={imgSrc}
+        alt={username}
+        className="h-64"
+      />
+    </div>
+  )
+}
+
+const GithubStatsPreview = ({ username, customizeStats }) => {
+  const { bgColor, cacheSeconds, hideBorder, locale, textColor, theme, titleColor } = customizeStats
+  const imgSrc = `https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true`
+  + `&theme=${theme}`
+  + `&title_color=${titleColor.slice(1)}`
+  + `&text_color=${textColor.slice(1)}`
+  + `&bg_color=${bgColor.slice(1)}`
+  + (hideBorder ? `&hide_boder=${hideBorder}` : '')
+  + (cacheSeconds !== 1800 ? `&cache_seconds=${cacheSeconds}` : '')
+  + `&locale=${locale}` + '&layout=compact'
+
+  return (
+    <div className="my-3">
+      <img
+        src={imgSrc}
+        alt={username}
+        className="h-48 text-center sm:h-48"
+      />
+    </div>
+  )
+}
+
+const GithubStreakStatsPreview = ({ username, customizeStreakStats }) => {
+  const { theme } = customizeStreakStats
+  const imgSrc = `https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=${theme}`
+
+  return (
+    <div className="my-3">
+      <img
+        src={imgSrc}
+        alt={username}
+        className="h-48 text-center sm:h-48"
+      />
+    </div>
+  )
+}
+
 export default function PreviewMarkdown({ data, workData }) {
   const isTwitterBadge = data.add_ons.twitterBadge
   const twitterUsername = data.social.twitter
   const isGithubTrophy = data.add_ons.githubTrophy
   const githubUsername = data.social.github
+  const isVisitorsBadge = data.add_ons.visitorsBadge
+  const customizeBadge = data.customize.badge
+  const isGithubStatsCard = data.add_ons.githubStatsCard
+  const customizeStats = data.customize.githubStatsCard
+  const isTopSkills = data.add_ons.topSkills
+  const customizeDetail = data.customize.topSkills
+  const isStreakStats = data.add_ons.githubStreakStats
+  const customizeStreakStats = data.customize.streakStats
 
   return (
     <div className="w-full p-4 border-2 border-black bg-gray-100 shadow-2xl">
       <TitlePreview prefix={data.title.prefix} name={data.title.name} />
       <SubtitlePreview sub={data.subtitle.sub} />
 
+      {isVisitorsBadge && <VisitorsBadgePreview username={githubUsername} customizeBadge={customizeBadge} />}
       {isGithubTrophy && <GithubTrophyPreview username={githubUsername} />}
       {isTwitterBadge && <TwitterBadgePreview username={twitterUsername} />}
 
@@ -223,6 +303,12 @@ export default function PreviewMarkdown({ data, workData }) {
       </div>
 
       <LanguageAndToolPreview skills={data.skills} />
+      <div className="sm:flex sm:flex-wrap sm:items-center sm:justify-between">
+        {isTopSkills && <TopLanguagesPreview username={githubUsername} customizeDetail={customizeDetail} />}
+        {isGithubStatsCard && <GithubStatsPreview username={githubUsername} customizeStats={customizeStats} />}
+        {isStreakStats &&
+        <GithubStreakStatsPreview username={githubUsername} customizeStreakStats={customizeStreakStats} />}
+      </div>
     </div>
   )
 }
